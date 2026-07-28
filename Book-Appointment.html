@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - HealthVibe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header Section -->
+<header class="site-header">
+  <div class="headerinnerdiv">
+    <!-- first div -->
+    <a href="index.html" class="logo-link">
+        <div id="my-logo">
+            <span class="health">Health</span><span class="vibe">Vibe</span>
+        </div>
+    </a>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <!-- second div -->
+    <div>
+        <nav class="nav-menu" id="navMenu">
+            
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Find Doctors ▾</span>
+                <div class="dropdown-panel">
+                    <a href="dermatologist.html">Dermatologist</a>
+                    <a href="cardiologist.html">Cardiologist</a>
+                    <a href="dentist.html">Dentist</a>
+                </div>
+            </div>
+
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Hospitals ▾</span>
+                <div class="dropdown-panel">
+                    <a href="hospitals-lahore.html">Lahore</a>
+                    <a href="hospitals-karachi.html">Karachi</a>
+                    <a href="hospitals-islamabad.html">Islamabad</a>
+                </div>
+            </div>
+            
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Pharmacy ▾</span>
+                <div class="dropdown-panel">
+                    <a href="medicines.html">Medicines</a>
+                    <a href="baby-care.html">Baby Care</a>
+                </div>
+            </div>
+
+            <div class="mobile-only-actions">
+                <a href="book-appointment.html" class="btn-primary">Book Appointment</a>
+                <a href="join-as-doctor.html" class="btn-secondary">Join as Doctor</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- third div -->
+    <div class="header-actions">
+        <a href="book-appointment.html" class="btn-primary">Book Appointment</a>
+        <a href="join-as-doctor.html" class="btn-secondary">Join as Doctor</a>
+    </div>
+ </div>
+</header>
+
+<!-- book appointment form -->
+ <section class="booking-hero">
+    <div class="form-card" id="appointmentForm">
+        <h2>Book Your Appointment</h2>
+        <p class="subtitle">Fill in the details below to schedule your consultation instantly.</p>
+        
+        <form action="#" method="POST" onsubmit="handleBooking(event)">
+            <div class="form-group">
+                <label>Full Name</label>
+                <div class="input-with-icon">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" name="name" id="userName" required placeholder="e.g. Ali Khan">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Email Address</label>
+                <div class="input-with-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" name="email" required placeholder="e.g. john@gmail.com">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number</label>
+                <div class="input-with-icon">
+                    <i class="fa-solid fa-phone"></i>
+                    <input type="tel" name="phone" required placeholder="Your Phone Number">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Select Doctor Specialty</label>
+                <div class="input-with-icon">
+                    <i class="fa-solid fa-stethoscope"></i>
+                    <select name="doctor" id="doctorSelect" required>
+                        <option value="" disabled selected>Choose a specialist</option>
+                        <option value="Dermatologist">Dermatologist</option>
+                        <option value="Cardiologist">Cardiologist</option>
+                        <option value="Neurologist">Neurologist</option>
+                        <option value="Pediatrician">Pediatrician</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                <span>Confirm Appointment</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </form>
+    </div>
+
+   <div class="hero-visual">
+    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80" alt="Professional Doctor">
+    <h3>Trusted Medical Experts</h3>
+    <p>Consult with highly qualified and experienced doctors dedicated to providing you with the best healthcare support.</p>
+  </div>
+</section>
+
+<section class="info-section">
+    <div class="info-container">
+        <div class="info-card">
+            <div class="icon-box">
+                <i class="fa-solid fa-user-shield"></i>
+            </div>
+            <h3>Verified Doctors</h3>
+            <p>All our specialists are fully verified, licensed, and experienced medical professionals.</p>
+        </div>
+        
+        <div class="info-card">
+            <div class="icon-box">
+                <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <h3>Quality Care</h3>
+            <p>We ensure you get the best medical attention, diagnostics, and continuous health support.</p>
+        </div>
+
+        <div class="info-card">
+            <div class="icon-box">
+                <i class="fa-solid fa-bolt"></i>
+            </div>
+            <h3>Fast Booking</h3>
+            <p>Skip long hospital waiting queues and book your consultation slot in seconds.</p>
+        </div>
+    </div>
+</section>
+
+<!-- popup -->
+<div class="popup-overlay" id="successPopup">
+    <div class="popup-box">
+        <div class="popup-icon">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <h3>Appointment Confirmed!</h3>
+        <p class="popup-subtitle">Your consultation is successfully scheduled</p>
+        
+        <div class="popup-details-box" id="popupDetails">
+            <!-- Yeh JavaScript ke zariye dynamic fill hoga -->
+        </div>
+
+        <button class="popup-btn" onclick="triggerSprinklesAndClose()">Got it, Thanks!</button>
+    </div>
+</div>
+<!-- faq section -->
+<section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-question">
+                <span>How do I book an appointment?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                Simply fill out the form above with your personal details, select your preferred doctor specialty, and click confirm.
+            </div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-question">
+                <span>Is my personal data secure?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                Yes, we use advanced encryption standards to ensure your medical history and personal info remain 100% private.
+            </div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-question">
+                <span>Can I cancel or reschedule?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                Yes, you can easily manage, cancel, or reschedule your appointments directly through your user dashboard anytime.
+            </div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-question">
+                <span>What should I bring to my appointment?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                Please bring a valid ID, your previous medical reports or prescription history, and a list of any current medications.
+            </div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-question">
+                <span>Are virtual online consultations available?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                Yes, along with physical hospital visits, you can easily opt for secure video consultations with top specialists from home.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- footer section -->
+
+
+<footer class="main-footer">
+    <div class="footer-grid">
+        <div class="footer-col firstdiv">
+            <h3>HealthVibe</h3>
+            <p>Pakistan's platform for finding, comparing, and booking doctors.</p>
+            <div class="social-links" >
+            <a href="#" style="color: white; margin-right: 15px; font-size: 20px;"><i class="fab fa-facebook"></i></a>
+            <a href="#" style="color: white; margin-right: 15px; font-size: 20px;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-col">
+            <h4>FIND DOCTORS</h4>
+            <ul>
+                <li><a href="cardiologist.html">Cardiologist</a></li>
+                <li><a href="dentist.html">Dentist</a></li>
+                <li><a href="dermatologist.html">Dermatologist</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>HOSPITALS</h4>
+            <ul>
+                <li><a href="hospitals-lahore.html">Lahore</a></li>
+                <li><a href="hospitals-karachi.html">Karachi</a></li>
+                <li><a href="hospitals-islamabad.html">Islamabad</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>PHARMACY</h4>
+            <ul>
+                <li><a href="medicines.html"> Medicines</a></li>
+                <li><a href="baby-care.html">Baby Care</a></li>
+                <li><a href="join-as-doctor.html">Join as Doctor</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 HealthVibe. All rights reserved. | Made for patients across Pakistan.</p>
+    </div>
+</footer>
+<!-- whatspp -->
+<a href="https://wa.me/" target="_blank" class="whatsapp-sticky-btn" title="Chat on WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+
+
+<!-- ai chat bot -->
+ <!-- Floating AI Chatbot Button & Window -->
+<div class="floating-ai-btn-container">
+    <button onclick="toggleAiChatWindow()" class="animated-glow-btn-float" title="Ask HealthVibe AI Assistant">
+        <i class="fas fa-robot"></i>
+    </button>
+    
+    <div id="aiFloatingWindow" class="ai-chat-window-float" style="display: none;">
+        <div class="ai-window-header">
+            <h3><i class="fas fa-stethoscope"></i> HealthVibe Smart Assistant</h3>
+            <button onclick="toggleAiChatWindow()" class="close-window-btn">&times;</button>
+        </div>
+        <div id="aiChatOutput" class="ai-output-box-float">Hello! Welcome to HealthVibe. How can I assist you with hospitals or medical guidance today?</div>
+        <div class="ai-input-row-float">
+            <input type="text" id="aiUserInput" placeholder="Type your medical question here..." onkeypress="if(event.key=='Enter') askGroqAI()">
+            <button onclick="askGroqAI()" class="send-btn-float"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>

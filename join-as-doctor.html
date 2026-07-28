@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Join as Doctor - HealthVibe</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header Section -->
+<header class="site-header">
+  <div class="headerinnerdiv">
+    <!-- first div -->
+    <a href="index.html" class="logo-link">
+        <div id="my-logo">
+            <span class="health">Health</span><span class="vibe">Vibe</span>
+        </div>
+    </a>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <!-- second div -->
+    <div>
+        <nav class="nav-menu" id="navMenu">
+            
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Find Doctors ▾</span>
+                <div class="dropdown-panel">
+                    <a href="dermatologist.html">Dermatologist</a>
+                    <a href="cardiologist.html">Cardiologist</a>
+                    <a href="dentist.html">Dentist</a>
+                </div>
+            </div>
+
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Hospitals ▾</span>
+                <div class="dropdown-panel">
+                    <a href="hospitals-lahore.html">Lahore</a>
+                    <a href="hospitals-karachi.html">Karachi</a>
+                    <a href="hospitals-islamabad.html">Islamabad</a>
+                </div>
+            </div>
+            
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Pharmacy ▾</span>
+                <div class="dropdown-panel">
+                    <a href="medicines.html">Medicines</a>
+                    <a href="baby-care.html">Baby Care</a>
+                </div>
+            </div>
+
+            <!-- Mobile only buttons (Sirf mobile par menu ke andar dikhenge) -->
+            <div class="mobile-only-actions">
+                <a href="book-appointment.html" class="btn-primary">Book Appointment</a>
+                <a href="join-as-doctor.html" class="btn-secondary">Join as Doctor</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- third div -->
+    <div class="header-actions">
+        <a href="book-appointment.html" class="btn-primary">Book Appointment</a>
+        <a href="join-as-doctor.html" class="btn-secondary">Join as Doctor</a>
+    </div>
+ </div>
+</header>
+
+<!-- Join as Doctor Section -->
+<section class="join-section">
+    <div class="join-container" id="form-container">
+        <!-- Left Content with Text & Medical Illustration -->
+        <div class="join-left">
+            <h2>Welcome to HealthVibe's Network</h2>
+            <p>Join our platform to grow your practice and connect with patients effortlessly.</p>
+            
+            <ul class="join-benefits">
+                <li>Create your profile and get instant appointments</li>
+                <li>Setup your online practice clinic</li>
+                <li>Once registered, you can easily manage, update, and edit your professional profile anytime through our secure popup interface to keep your schedule and details up to date."</li>
+            </ul>
+
+            Medical Vector Illustration
+            <div class="join-illustration">
+                <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Background Soft Circle -->
+                    <circle cx="250" cy="200" r="160" fill="#f0fdfa" />
+                    <!-- Medical Cross / Plus Badge -->
+                    <rect x="230" y="120" width="40" height="120" rx="8" fill="#0d9488" opacity="0.9"/>
+                    <rect x="190" y="160" width="120" height="40" rx="8" fill="#0d9488" opacity="0.9"/>
+                    <!-- Decorative Stethoscope / Heartbeat line elements -->
+                    <path d="M120 280 Q 200 220 250 280 T 380 280" fill="none" stroke="#14b8a6" stroke-width="4" stroke-linecap="round"/>
+                    <circle cx="250" cy="280" r="8" fill="#0f766e" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Right Register Card -->
+        <div class="join-card" >
+            <h3 id="form-title">Register Now</h3>
+            <form id="doctor-form" onsubmit="handleDoctorRegistration(event)">
+                <input type="hidden" id="edit-index" value="">
+                <div class="input-group">
+                    <input type="text" id="doc-name" placeholder="Enter your full name" required>
+                </div>
+                <div class="input-group">
+                    <select id="doc-speciality" required>
+                        <option value="" disabled selected>Select Speciality</option>
+                        <option value="Cardiologist">Cardiologist</option>
+                        <option value="Dermatologist">Dermatologist</option>
+                        <option value="Neurologist">Neurologist</option>
+                        <option value="General Physician">General Physician</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <input type="tel" id="doc-phone" placeholder="Phone number" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="doc-email" placeholder="Email address" required>
+                </div>
+               <div class="form-group">
+    <label for="imageUpload">Upload Image (Optional):</label>
+    <div class="file-upload-wrapper">
+        <input type="file" id="imageUpload" name="imageUpload" accept="image/*" onchange="updateFileName(this)">
+        <span class="file-upload-text">Choose file or drag here</span>
+        <span class="file-upload-btn">Browse</span>
+    </div>
+</div>
+
+<script>
+function updateFileName(input) {
+    const textSpan = input.parentElement.querySelector('.file-upload-text');
+    if (input.files && input.files[0]) {
+        textSpan.textContent = input.files[0].name;
+        textSpan.style.color = "#334155";
+    } else {
+        textSpan.textContent = "Choose file or drag here";
+        textSpan.style.color = "#9ca3af";
+    }
+}
+</script>
+                <button type="submit" id="submit-btn" class="join-btn">Create Your Profile</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- All-in-One Interactive Popup Modal -->
+     <div id="success-modal" class="modal-overlay" style="display: none;"> 
+        <div class="modal-content" id="modal-box-content">
+            <!-- Dynamic content -->
+        </div>
+    </div>
+</section>
+
+<!-- Include Canvas Confetti Library for Celebration Animation -->
+
+<div class="stats-container">
+    <div class="stat-card">
+        <h3>10 Million+</h3>
+        <p>Served Patients</p>
+    </div>
+    <div class="stat-card">
+        <h3>20,000+</h3>
+        <p>Doctors</p>
+    </div>
+    <div class="stat-card">
+        <h3>50,000+</h3>
+        <p>Reviews</p>
+    </div>
+    <div class="stat-card">
+        <h3>4,000+</h3>
+        <p>Hospitals</p>
+    </div>
+</div>
+
+<!-- why choose us -->
+
+<section class="benefits-section">
+    <h2 class="section-title">Why Join HealthVibe?</h2>
+    <div class="benefits-container">
+        <div class="benefit-box">
+            <h3>Global Reach</h3>
+            <p>Connect with millions of patients across the region seamlessly.</p>
+        </div>
+        <div class="benefit-box">
+            <h3>Digital Clinic</h3>
+            <p>Manage your appointments and medical records all in one place.</p>
+        </div>
+        <div class="benefit-box">
+            <h3>Secure Payments</h3>
+            <p>Get paid directly to your bank account with complete transparency.</p>
+        </div>
+    </div>
+</section>
+
+<!-- footer section -->
+ <footer class="main-footer">
+    <div class="footer-grid">
+        <div class="footer-col firstdiv">
+            <h3>HealthVibe</h3>
+            <p>Pakistan's platform for finding, comparing, and booking doctors.</p>
+            <div class="social-links" >
+            <a href="#" style="color: white; margin-right: 15px; font-size: 20px;"><i class="fab fa-facebook"></i></a>
+            <a href="#" style="color: white; margin-right: 15px; font-size: 20px;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-col">
+            <h4>FIND DOCTORS</h4>
+            <ul>
+                <li><a href="cardiologist.html">Cardiologist</a></li>
+                <li><a href="dentist.html">Dentist</a></li>
+                <li><a href="dermatologist.html">Dermatologist</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>HOSPITALS</h4>
+            <ul>
+                <li><a href="hospitals-lahore.html">Lahore</a></li>
+                <li><a href="hospitals-karachi.html">Karachi</a></li>
+                <li><a href="hospitals-islamabad.html">Islamabad</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>PHARMACY</h4>
+            <ul>
+                <li><a href="medicines.html"> Medicines</a></li>
+                <li><a href="baby-care.html">Baby Care</a></li>
+                <li><a href="join-as-doctor.html">Join as Doctor</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 HealthVibe. All rights reserved. | Made for patients across Pakistan.</p>
+    </div>
+</footer>
+
+<!-- whatspp -->
+
+<a href="https://wa.me/" target="_blank" class="whatsapp-sticky-btn" title="Chat on WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+<!-- ai chat bot -->
+ <!-- Floating AI Chatbot Button & Window -->
+<div class="floating-ai-btn-container">
+    <button onclick="toggleAiChatWindow()" class="animated-glow-btn-float" title="Ask HealthVibe AI Assistant">
+        <i class="fas fa-robot"></i>
+    </button>
+    
+    <div id="aiFloatingWindow" class="ai-chat-window-float" style="display: none;">
+        <div class="ai-window-header">
+            <h3><i class="fas fa-stethoscope"></i> HealthVibe Smart Assistant</h3>
+            <button onclick="toggleAiChatWindow()" class="close-window-btn">&times;</button>
+        </div>
+        <div id="aiChatOutput" class="ai-output-box-float">Hello! Welcome to HealthVibe. How can I assist you with hospitals or medical guidance today?</div>
+        <div class="ai-input-row-float">
+            <input type="text" id="aiUserInput" placeholder="Type your medical question here..." onkeypress="if(event.key=='Enter') askGroqAI()">
+            <button onclick="askGroqAI()" class="send-btn-float"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

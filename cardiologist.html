@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthVibe</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header Section -->
+<header class="site-header">
+  <div class="headerinnerdiv">
+    <!-- first div -->
+    <a href="index.html" class="logo-link">
+        <div id="my-logo">
+            <span class="health">Health</span><span class="vibe">Vibe</span>
+        </div>
+    </a>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <!-- second div -->
+    <div>
+        <nav class="nav-menu" id="navMenu">
+            
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Find Doctors ▾</span>
+                <div class="dropdown-panel">
+                    <a href="dermatologist.html">Dermatologist</a>
+                    <a href="cardiologist.html">Cardiologist</a>
+                    <a href="dentist.html">Dentist</a>
+                </div>
+            </div>
+
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Hospitals ▾</span>
+                <div class="dropdown-panel">
+                    <a href="hospitals-lahore.html">Lahore</a>
+                    <a href="hospitals-karachi.html">Karachi</a>
+                    <a href="hospitals-islamabad.html">Islamabad</a>
+                </div>
+            </div>
+            
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Pharmacy ▾</span>
+                <div class="dropdown-panel">
+                    <a href="medicines.html">Medicines</a>
+                    <a href="baby-care.html">Baby Care</a>
+                </div>
+            </div>
+
+            <!-- Mobile only buttons (Sirf mobile par menu ke andar dikhenge) -->
+            <div class="mobile-only-actions">
+                <a href="book-appointment.html" class="btn-primary">Book Appointment</a>
+                <a href="join-as-doctor.html" class="btn-secondary">Join as Doctor</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- third div -->
+    <div class="header-actions">
+        <a href="book-appointment.html" class="btn-primary">Book Appointment</a>
+        <a href="join-as-doctor.html" class="btn-secondary">Join as Doctor</a>
+    </div>
+ </div>
+</header>
+
+
+<!-- health vibe layout container -->
+
+<div class="healthvibe-layout-container ">
+    <div class="doctor-results-header">
+        <h1>1,166 Best Dermatologists In <a href="index.html" style="color: inherit; text-decoration: none;">HealthVibe</a> | Top Skin Specialists</h1>
+        <p><a href="index.html">HealthVibe</a> > Dermatologist</p>
+    </div>
+  <div class="search-filter-wrapper">
+    <div class="search-box">
+        <input type="text" id="doctorInput" class="doctor-field" list="doctor-categories" placeholder="Search by Doctors ">
+        <datalist id="doctor-categories">
+            <option value="Dermatologist">
+            <option value="Dentist">
+            <option value="Cardiologist">
+        </datalist>
+        <button class="search-submit" onclick="searchDoctor()">Search</button>
+    </div>
+   <div class="filter-buttons-wrapper">
+        <button class="filter-btn" onclick="handleDoctorFilter('fee-low', this)">Fee: Low to High</button>
+        <button class="filter-btn" onclick="handleDoctorFilter('rating', this)">Highest Rated</button>
+        <button class="filter-btn active" onclick="handleDoctorFilter('all', this)">All Specialists</button>
+        <button class="filter-btn" onclick="handleDoctorFilter('experienced', this)">15+ / Exp</button>
+    </div>
+ </div>
+</div>
+
+
+<!-- doctors card section -->
+<section class="doctors-section">
+    <div class="doctors-grid-container container">
+        
+        <!-- card 1: Dr. Daniyal Khan -->
+        <div class="doctor-card" data-experience="15" data-fee="1500" data-rating="4.9">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctorspage/F14.jpg" alt="Dr. Hina Tariq">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr.Hina Tariq</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Cardiologist, Interventional Cardiologist</p>
+                    <p class="qualification">MBBS, FCPS (Cardiology), American Board Certified in Cardiovascular Disease</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 1500</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>510</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>15 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>98%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Angioplasty</span>
+                <span class="tag">Chest Pain</span>
+                <span class="tag">Hypertension</span>
+                <span class="tag">ECG & Echo</span>
+            </div>
+        </div>
+
+        <!-- card 2: Dr. Mahnoor Fatima -->
+        <div class="doctor-card" data-experience="12" data-fee="1200" data-rating="4.8">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctorspage/F3.jpg" alt="Dr. Mahnoor Fatima">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Mahnoor Fatima</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Cardiologist, Echocardiographist</p>
+                    <p class="qualification">MBBS, MRCP (UK), Fellowship in Echocardiography</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 1200</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>480</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>12 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>96%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Heart Failure</span>
+                <span class="tag">Arrhythmia</span>
+                <span class="tag">Valvular Heart Disease</span>
+                <span class="tag">Preventive Cardiology</span>
+            </div>
+        </div>
+
+        <!-- card 3: Dr. Haris Mumtaz -->
+        <div class="doctor-card" data-experience="11" data-fee="1000" data-rating="4.7">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctorspage/M10.jpg" alt="Dr. Haris Mumtaz">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Haris Mumtaz</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Cardiologist, Cardiac Electrophysiologist</p>
+                    <p class="qualification">MBBS, FCPS (Cardiology), Diploma in Electrophysiology</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 1000</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>455</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>11 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>95%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Pacemaker</span>
+                <span class="tag">Palpitations</span>
+                <span class="tag">Holter Monitoring</span>
+                <span class="tag">Tachycardia</span>
+            </div>
+        </div>
+
+        <!-- card 4: Dr. Sana Zafar -->
+        <div class="doctor-card" data-experience="9" data-fee="900" data-rating="4.6">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctorspage/F3.jpg" alt="Dr. Sana Zafar">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Sana Zafar</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Cardiologist</p>
+                    <p class="qualification">MBBS, FCPS (Cardiology)</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 900</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>425</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>9 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>94%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">High Blood Pressure</span>
+                <span class="tag">Cholesterol</span>
+                <span class="tag">Coronary Artery Disease</span>
+                <span class="tag">Cardiac Rehab</span>
+            </div>
+        </div>
+
+        <!-- card 5: Dr. Saad Farooq -->
+        <div class="doctor-card" data-experience="14" data-fee="1400" data-rating="4.8">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctorspage/M11.jpg" alt="Dr. Saad Farooq">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Saad Farooq</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Cardiologist, Invasive Cardiologist</p>
+                    <p class="qualification">MBBS, MSc (Cardiovascular Medicine)</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 1400</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>460</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>14 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>97%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Stenting</span>
+                <span class="tag">Angiography</span>
+                <span class="tag">Heart Attack Care</span>
+                <span class="tag">Treadmill Test</span>
+            </div>
+        </div>
+
+        <!-- card 6: Dr. Kiran Shahzadi -->
+        <div class="doctor-card" data-experience="10" data-fee="1100" data-rating="4.7">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctorspage/F4.jpg" alt="Dr. Kiran Shahzadi">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Kiran Shahzadi</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Cardiologist, Pediatric Cardiologist</p>
+                    <p class="qualification">MBBS, FCPS, Fellowship in Pediatric Cardiology</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 1100</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>435</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>10 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>96%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Congenital Heart Defects</span>
+                <span class="tag">Child Heart Care</span>
+                <span class="tag">Fetal Echo</span>
+                <span class="tag">Rheumatic Fever</span>
+            </div>
+        </div>
+
+        <!-- card 7: Dr. Faizan Asif -->
+        <div class="doctor-card" data-experience="8" data-fee="800" data-rating="4.5">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctorspage/M14.jpg" alt="Dr. Faizan Asif">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Faizan Asif</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Cardiologist</p>
+                    <p class="qualification">MBBS, Dip. Card (London)</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 800</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>415</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>8 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>92%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Blood Pressure Control</span>
+                <span class="tag">Shortness of Breath</span>
+                <span class="tag">Lipid Disorders</span>
+                <span class="tag">Cardio Consultation</span>
+            </div>
+        </div>
+
+        <!-- card 8: Dr. Zohaib Akram -->
+        <div class="doctor-card more-card" data-experience="7" data-fee="1300" data-rating="4.6">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctorspage/M15.jpg" alt="Dr. Zohaib Akram">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Zohaib Akram</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Cardiologist, Interventional Cardiologist</p>
+                    <p class="qualification">MBBS, MCPS (Cardiology)</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 1300</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>400</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>7 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>93%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Heart Stents</span>
+                <span class="tag">Coronary Angiography</span>
+                <span class="tag">Chest Discomfort</span>
+                <span class="tag">Vascular Checkup</span>
+            </div>
+        </div>
+
+        <!-- card 9: Dr. Owais Qureshi -->
+        <div class="doctor-card more-card" data-experience="13" data-fee="1250" data-rating="4.7">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctorspage/M16.jpg" alt="Dr. Owais Qureshi">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Owais Qureshi</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Cardiologist, Heart Failure Specialist</p>
+                    <p class="qualification">MBBS, FCPS (Cardiology)</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 1250</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>440</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>13 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>95%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Heart Failure Management</span>
+                <span class="tag">Cardiomyopathy</span>
+                <span class="tag">Edema Control</span>
+                <span class="tag">Advanced Cardiac Care</span>
+            </div>
+        </div>
+
+        <!-- card 10: Dr. Areesha Batool -->
+        <div class="doctor-card more-card" data-experience="6" data-fee="750" data-rating="4.4">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctorspage/F11.jpg" alt="Dr. Areesha Batool">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Areesha Batool</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Cardiologist</p>
+                    <p class="qualification">MBBS, D-Card</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 750</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>385</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>6 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>91%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Blood Pressure</span>
+                <span class="tag">Preventive Checkup</span>
+                <span class="tag">Fatigue Evaluation</span>
+                <span class="tag">General Consultation</span>
+            </div>
+        </div>
+
+        <!-- card 11: Dr. Hamza Yousaf -->
+        <div class="doctor-card more-card" data-experience="14" data-fee="1600" data-rating="4.9">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctor4.jpg" alt="Dr. Hamza Yousaf">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Hamza Yousaf</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Cardiologist, Cardiac Surgeon</p>
+                    <p class="qualification">MBBS, FCPS (Cardiology), Cardiac Surgery Fellowship</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 1600</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>450</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>14 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>97%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Bypass Surgery</span>
+                <span class="tag">Valve Replacement</span>
+                <span class="tag">Aortic Aneurysm</span>
+                <span class="tag">Open Heart Surgery</span>
+            </div>
+        </div>
+
+        <!-- card 12: Dr. Mariam Tariq -->
+        <div class="doctor-card more-card" data-experience="9" data-fee="1150" data-rating="4.7">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctor5.jpg" alt="Dr. Mariam Tariq">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Mariam Tariq</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Cardiologist, Non-Invasive Cardiologist</p>
+                    <p class="qualification">MBBS, MRCP (UK), Diploma in Cardiovascular Care</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 1150</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>480</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>9 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>95%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Stress Testing</span>
+                <span class="tag">Echocardiography</span>
+                <span class="tag">Hypertension Care</span>
+                <span class="tag">Heart Health Screening</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div class="load-more-wrapper">
+    <button id="load-more-btn" onclick="showMore()">Load More</button>
+</div>
+<!-- about cardiologists -->
+
+<section class="derm-info-main-wrap container">
+    <div class="derm-content-box">
+        <h2 class="derm-main-heading">About Cardiologist</h2>
+        <p class="derm-desc-text">HealthVibe offers a list of expert cardiologists and heart specialists. To help you find the best nearby cardiac specialist for you, we have compiled a list of top cardiologists based on their clinical experience, clinic/hospital location, availability hours, fee range, and services, as well as positive reviews from patients.</p>
+
+        <h3 class="derm-sub-heading">Who is a Cardiologist?</h3>
+        <p class="derm-desc-text">A cardiologist is an expert medical doctor who specializes comprehensively in the exhaustive diagnosis, prevention, ongoing management, and specialized medical treatment of 
+            various complex conditions, diseases, and disorders affecting the cardiovascular 
+            system, which includes both the heart and blood vessels. Beyond evaluating symptoms
+             like chest pain or palpitations, they play a critical life-saving role by 
+             performing advanced diagnostic tests, managing chronic heart failures, regulating
+              blood pressure irregularities, and guiding patients of all ages toward 
+              heart-healthy lifestyle habits to secure long-term cardiac wellness and overall
+               vitality. They expertly manage critical conditions ranging from acute hypertension and coronary artery disease to severe heart failure, while proactively guiding patients through vital lifestyle modifications, dietary changes, and preventative strategies to safeguard long-term cardiac wellness and overall physical longevity.</p>
+
+        <h3 class="derm-sub-heading">What are the types of Cardiologists?</h3>
+        <p class="derm-desc-text">Within cardiology practice, multiple specializations are dedicated to addressing specific heart health and circulatory challenges:</p>
+        <ul class="derm-bullet-list">
+            <li><strong>Interventional Cardiologists:</strong> Focus on catheter-based treatments for heart diseases, including angioplasty and stenting.</li>
+            <li><strong>Electrophysiologists:</strong> Specialize in the heart's electrical system, diagnosing and treating abnormal heart rhythms (arrhythmias).</li>
+            <li><strong>Non-Invasive / Clinical Cardiologists:</strong> Focus on diagnosing and managing heart conditions using non-surgical tests like echocardiograms and stress tests.</li>
+            <li><strong>Pediatric Cardiologists:</strong> Specialize in diagnosing and treating heart conditions in infants, children, and adolescents.</li>
+        </ul>
+
+        <h3 class="derm-sub-heading">What conditions are treated by a Cardiologist?</h3>
+        <p class="derm-desc-text">Cardiologists are expert medical professionals dedicated to diagnosing, treating, and managing a comprehensive variety of heart and vascular conditions. Their specialized and advanced clinical care covers persistent cardiovascular challenges such as coronary artery disease, chronic heart failure, acute hypertension, dangerous arrhythmias and irregular heartbeats, congenital heart defects, heart valve disorders, myocardial infarctions (heart attacks recovery), and ongoing preventative cardiac care to ensure absolute long-term heart health and a protected circulatory system.</p>
+    </div>
+</section>
+
+<!-- why choose us -->
+
+<section class="hv-why-sec">
+    <div class="hv-why-wrap">
+        <div class="hv-why-top">
+            <span class="hv-why-tag">— CARDIAC SPECIALISTS</span>
+            <h2 class="hv-why-title">Advanced Heart & Vascular Care</h2>
+            <p class="hv-why-desc">Your heart health is our top priority. Connect with leading cardiologists for expert diagnosis, preventive guidance, and chronic care management.</p>
+        </div>
+
+        <div class="hv-why-grid">
+            <!-- Feature 1 -->
+            <div class="hv-why-card">
+                <div class="hv-why-icon-box">❤️</div>
+                <h3 class="hv-why-card-title">Top Heart Specialists</h3>
+                <p class="hv-why-card-text">Consult experienced cardiologists and electrophysiologists dedicated to comprehensive cardiovascular wellness.</p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="hv-why-card">
+                <div class="hv-why-icon-box">🩺</div>
+                <h3 class="hv-why-card-title">Diagnostic Support</h3>
+                <p class="hv-why-card-text">Find specialists offering expert evaluation for blood pressure control, ECG reviews, and heart disease prevention.</p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="hv-why-card">
+                <div class="hv-why-icon-box">🛡️</div>
+                <h3 class="hv-why-card-title">Trusted Care Plan</h3>
+                <p class="hv-why-card-text">Receive personalized lifestyle guidance and medication plans based on verified patient experiences and expert reviews.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- faq section -->
+
+<section class="faq-section">
+    <h2>Frequently Asked Questions about Best Cardiologists in Pakistan</h2>
+    
+    <div class="faq-item">
+        <button class="faq-question">
+            <span>Which symptoms and issues are treated by Cardiologists in Pakistan?</span>
+            <span class="faq-icon">⌄</span>
+        </button>
+        <div class="faq-answer">
+            <p>Cardiologists specialize in diagnosing, managing, and treating a comprehensive variety of complex cardiovascular conditions. This includes chronic chest pain or angina, high blood pressure or hypertension, irregular heartbeats or arrhythmias, heart failure, coronary artery disease, heart valve disorders, and congenital heart defects. They also provide post-operative cardiac rehabilitation guidance and preventive heart care strategies for patients at risk of stroke or heart attacks.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            <span>Who is the best Cardiologist in Pakistan?</span>
+            <span class="faq-icon">⌄</span>
+        </button>
+        <div class="faq-answer">
+            <p>Identifying the absolute best cardiologist largely depends on your specific medical requirements, whether you need interventional or non-invasive care, your geographical location, and your preference for private clinics versus major hospital setups. HealthVibe allows you to thoroughly examine verified patient reviews, success rates, professional qualifications, and detailed background profiles to help you choose the most suitable heart specialist for your condition.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            <span>Which cardiologists are available for online consultation?</span>
+            <span class="faq-icon">⌄</span>
+        </button>
+        <div class="faq-answer">
+            <p>A large network of highly qualified and experienced heart specialists provides convenient telemedicine and instant video consultation services through HealthVibe. These online sessions are ideal for discussing routine blood pressure monitoring logs, reviewing diagnostic test reports such as ECGs or lipid profiles, managing long-term cardiac medications, and handling minor follow-up consultations without needing to travel to a physical clinic.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            <span>How do you choose a Cardiologist in Pakistan?</span>
+            <span class="faq-icon">⌄</span>
+        </button>
+        <div class="faq-answer">
+            <p>Choosing the right cardiologist requires evaluating multiple critical factors. You should look into their educational degrees and fellowship certifications such as FCPS or MRCP, their years of hands-on clinical experience, patient feedback scores and testimonials, the accessibility and location of their clinic or hospital affiliation, and whether their primary medical expertise aligns with your specific heart health needs.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            <span>How much does a Cardiologist cost in Pakistan?</span>
+            <span class="faq-icon">⌄</span>
+        </button>
+        <div class="faq-answer">
+            <p>The consultation charges for visiting a certified cardiologist typically vary between PKR 1,500 and PKR 4,000 or higher per visit. The exact fee structure generally fluctuates based on the doctor's professional market reputation, years of specialized experience, the tier and standard of the private hospital or medical center, and whether the appointment is booked as an in-person clinic visit or a virtual online consultation.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            <span>Who is the top cardiologist in Pakistan?</span>
+            <span class="faq-icon">⌄</span>
+        </button>
+        <div class="faq-answer">
+            <p>Top-tier cardiac care specialists and renowned heart surgeons are primarily based in major metropolitan medical hubs across the country, including Lahore, Karachi, and Islamabad. These esteemed professionals usually hold advanced international fellowship certifications, extensive clinical and surgical experience, and leadership roles in prominent tertiary care cardiac institutes.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            <span>Do you have cardiologist under 1000 In Pakistan?</span>
+            <span class="faq-icon">⌄</span>
+        </button>
+        <div class="faq-answer">
+            <p>Finding a senior consultant cardiologist under PKR 1,000 can be quite challenging due to specialized training requirements, but you can find junior consultants, cardiology residents, or general physicians offering basic cardiovascular health screenings and initial consultations under this budget, particularly when visiting charitable trust hospitals, welfare clinics, or outpatient departments of public sector health facilities.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            <span>Who is the most experienced Cardiologist In Pakistan?</span>
+            <span class="faq-icon">⌄</span>
+        </button>
+        <div class="faq-answer">
+            <p>The most experienced cardiologists typically possess over 15 to 25 years of dedicated clinical and procedural practice. These veteran medical professionals are frequently associated with premier teaching hospitals, specialized heart institutes, and major private healthcare complexes where they manage severe, high-risk cardiac emergencies and advanced heart operations.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            <span>How can I find a Cardiologist near me in Pakistan?</span>
+            <span class="faq-icon">⌄</span>
+        </button>
+        <div class="faq-answer">
+            <p>You can effortlessly locate nearby heart specialists by utilizing HealthVibe's interactive city and neighborhood filter tools. The platform allows you to narrow down your search based on your exact location, view complete clinic addresses, check real-time doctor availability schedules, examine consultation charges, and secure your direct appointment slots within minutes.</p>
+        </div>
+    </div>
+</section>
+
+<!-- footer section -->
+ <footer class="main-footer">
+    <div class="footer-grid container">
+        <div class="footer-col firstdiv">
+            <h3>HealthVibe</h3>
+            <p>Pakistan's platform for finding, comparing, and booking doctors.</p>
+            <div class="social-links" >
+            <a href="#" style="color: white; margin-right: 15px; font-size: 20px;"><i class="fab fa-facebook"></i></a>
+            <a href="#" style="color: white; margin-right: 15px; font-size: 20px;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-col">
+            <h4>FIND DOCTORS</h4>
+            <ul>
+                <li><a href="cardiologist.html">Cardiologist</a></li>
+                <li><a href="dentist.html">Dentist</a></li>
+                <li><a href="dermatologist.html">Dermatologist</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>HOSPITALS</h4>
+            <ul>
+                <li><a href="hospitals-lahore.html">Lahore</a></li>
+                <li><a href="hospitals-karachi.html">Karachi</a></li>
+                <li><a href="hospitals-islamabad.html">Islamabad</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>PHARMACY</h4>
+            <ul>
+                <li><a href="medicines.html"> Medicines</a></li>
+                <li><a href="baby-care.html">Baby Care</a></li>
+                <li><a href="join-as-doctor.html">Join as Doctor</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 HealthVibe. All rights reserved. | Made for patients across Pakistan.</p>
+    </div>
+</footer>
+    
+
+<!-- whatspp -->
+
+<a href="https://wa.me/" target="_blank" class="whatsapp-sticky-btn" title="Chat on WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+<!-- ai chat bot -->
+ <!-- Floating AI Chatbot Button & Window -->
+<div class="floating-ai-btn-container">
+    <button onclick="toggleAiChatWindow()" class="animated-glow-btn-float" title="Ask HealthVibe AI Assistant">
+        <i class="fas fa-robot"></i>
+    </button>
+    
+    <div id="aiFloatingWindow" class="ai-chat-window-float" style="display: none;">
+        <div class="ai-window-header">
+            <h3><i class="fas fa-stethoscope"></i> HealthVibe Smart Assistant</h3>
+            <button onclick="toggleAiChatWindow()" class="close-window-btn">&times;</button>
+        </div>
+        <div id="aiChatOutput" class="ai-output-box-float">Hello! Welcome to HealthVibe. How can I assist you with hospitals or medical guidance today?</div>
+        <div class="ai-input-row-float">
+            <input type="text" id="aiUserInput" placeholder="Type your medical question here..." onkeypress="if(event.key=='Enter') askGroqAI()">
+            <button onclick="askGroqAI()" class="send-btn-float"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>

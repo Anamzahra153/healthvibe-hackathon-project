@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthVibe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header Section -->
+<header class="site-header">
+  <div class="headerinnerdiv">
+    <!-- first div -->
+    <a href="index.html" class="logo-link">
+        <div id="my-logo">
+            <span class="health">Health</span><span class="vibe">Vibe</span>
+        </div>
+    </a>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <!-- second div -->
+    <div>
+        <nav class="nav-menu" id="navMenu">
+            
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Find Doctors ▾</span>
+                <div class="dropdown-panel">
+                    <a href="dermatologist.html">Dermatologist</a>
+                    <a href="cardiologist.html">Cardiologist</a>
+                    <a href="dentist.html">Dentist</a>
+                </div>
+            </div>
+
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Hospitals ▾</span>
+                <div class="dropdown-panel">
+                    <a href="hospitals-lahore.html">Lahore</a>
+                    <a href="hospitals-karachi.html">Karachi</a>
+                    <a href="hospitals-islamabad.html">Islamabad</a>
+                </div>
+            </div>
+            
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Pharmacy ▾</span>
+                <div class="dropdown-panel">
+                    <a href="medicines.html">Medicines</a>
+                    <a href="baby-care.html">Baby Care</a>
+                </div>
+            </div>
+
+            <!-- Mobile only buttons (Sirf mobile par menu ke andar dikhenge) -->
+            <div class="mobile-only-actions">
+                <a href="book-appointment.html" class="btn-primary">Book Appointment</a>
+                <a href="join-as-doctor.html" class="btn-secondary">Join as Doctor</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- third div -->
+    <div class="header-actions">
+        <a href="book-appointment.html" class="btn-primary">Book Appointment</a>
+        <a href="join-as-doctor.html" class="btn-secondary">Join as Doctor</a>
+    </div>
+ </div>
+</header>
+
+
+<!-- hospital list -->
+<header class="hospital-page-banner">
+    <div class="banner-content">
+        <h1>Lahore Healthcare Directory</h1>
+        <P>"Access verified addresses, contact numbers, and emergency care for top city hospitals."</P>      
+        <!-- Search Box Banner ke andar -->
+        <div class="search-box-container">
+            <input type="text" id="hospitalSearch" placeholder="Search hospitals, locations and services..." onkeyup="searchAndScrollHospital()">
+            <button class="search-btn" onclick="searchAndScrollHospital()">Search</button>
+        </div>
+    </div>
+</header>
+    <!-- Main Content Layout -->
+    <div class="hospital-main-wrapper hello">
+     
+        <!-- Left Side: Comprehensive Hospitals List with Real Contact Numbers -->
+        <div class="hospitals-container">
+            
+            <!-- 1 -->
+            <div class="hospital-box" id="hospital-shaukat">
+                <div class="hospital-badge-type">Charitable & Trust</div>
+                <div class="hospital-card-header">
+                    <img src="images/hospitalslahore/Shaukat Khanum Memorial Cancer Hospital Lahore, modern hospital building exterior, professional healthcare architecture, clean white and blue building, medical facility in Pakistan, professional profile image.jpg" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Shaukat Khanum Memorial Cancer Hospital</h2>
+                        <span class="location-tag">📍 Johar Town, Lahore</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Specialized oncology institution providing advanced chemotherapy, diagnostics, and patient care.</p>
+                <div class="contact-number">📞 Official Phone: 042-35905000</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Oncology</span><span>ICU</span><span>Pharmacy</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/924235905000', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="hospital-box" id="hospital-services">
+                <div class="hospital-badge-type">Government Teaching</div>
+                <div class="hospital-card-header">
+                    <img src="images/hospitalslahore/Services Hospital Lahore, large government teaching hospital building exterior, professional healthcare architecture, medical facility in Pakistan, hospital entrance with signage, professional profile image.jpg" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Services Hospital Lahore</h2>
+                        <span class="location-tag">📍 Jail Road, Lahore</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Major tertiary care center featuring full-scale emergency services and specialized surgical wards.</p>
+                <div class="contact-number">📞 Official Phone: 042-99203426</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>24/7 ER</span><span>Cardiology</span><span>Burn Unit</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/924299203426', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="hospital-box" id="hospital-mayo">
+                <div class="hospital-badge-type">Government Teaching</div>
+                <div class="hospital-card-header">
+                    <img src="images/hospitalslahore/Mayo Hospital Lahore, historic government hospital building exterior, colonial architecture medical facility, King Edward Medical University teaching hospital, professional healthcare building in Pakistan, professional pr.jpg" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Mayo Hospital Lahore</h2>
+                        <span class="location-tag">📍 Hospital Road, Lahore</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Historic and massive multi-specialty medical complex housing dedicated trauma and pediatric units.</p>
+                <div class="contact-number">📞 Official Phone: 042-99211100</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Trauma</span><span>Pediatrics</span><span>Surgery</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/924299211100', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="hospital-box" id="hopital-jinnah">
+                <div class="hospital-badge-type">Government Teaching</div>
+                <div class="hospital-card-header">
+                    <img src="images/hospitalslahore/Jinnah Hospital Lahore, large government hospital building exterior, professional healthcare architecture, historic medical facility in Pakistan, main entrance with signage, professional profile image.jpg" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Jinnah Hospital Lahore</h2>
+                        <span class="location-tag">📍 Allama Iqbal Town, Lahore</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Expansive public teaching facility equipped with high-capacity emergency and intensive care departments.</p>
+                <div class="contact-number">📞 Official Phone: 042-99231400</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Emergency</span><span>ICU</span><span>Radiology</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/924299231400', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5 -->
+            <div class="hospital-box" id="hospital-Agakhan">
+                <div class="hospital-badge-type">Private Medical Center</div>
+                <div class="hospital-card-header">
+                    <img src="images/hospitalslahore/Aga Khan Hospital Lahore, modern private hospital building exterior, contemporary healthcare architecture, professional medical facility in Pakistan, clean and modern design, professional profile image.jpg" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Aga Khan University Hospital Laboratory & Medical Centre</h2>
+                        <span class="location-tag">📍 Gulberg III, Lahore</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Premier diagnostic center offering specialist consultations, screening packages, and precise lab testing.</p>
+                <div class="contact-number">📞 Official Phone: 042-111-254-254</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Diagnostics</span><span>Consultation</span><span>Lab</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/9242111254254', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6 -->
+            <div class="hospital-box" id="hopital-national">
+                <div class="hospital-badge-type">Private Hospital</div>
+                <div class="hospital-card-header">
+                    <img src="images/hospitalslahore/National Hospital Lahore, modern private hospital building exterior, contemporary healthcare architecture, professional medical facility in Pakistan, clean modern design with signage, professional profile image.jpg" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>National Hospital & Medical Centre</h2>
+                        <span class="location-tag">📍 DHA Phase 1, Lahore</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">High-end medical complex delivering premium inpatient accommodation and advanced surgical care.</p>
+                <div class="contact-number">📞 Official Phone: 042-35926090</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Private Rooms</span><span>ICU</span><span>Gynecology</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/924235926090', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7 -->
+            <div class="hospital-box" id="hospital-hameed">
+                <div class="hospital-badge-type">Private Hospital</div>
+                <div class="hospital-card-header">
+                    <img src="images/hospitalslahore/Hameed Latif Hospital Lahore, modern private hospital building exterior, contemporary healthcare architecture, professional medical facility in Pakistan, clean modern design with hospital signage, professional profile ima.jpg" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Hameed Latif Hospital</h2>
+                        <span class="location-tag">📍 Garden Town, Lahore</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Renowned private healthcare establishment widely recognized for maternity services and neonatal care.</p>
+                <div class="contact-number">📞 Official Phone: 042-35865631</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Maternity</span><span>NICU</span><span>Surgery</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/924235865631', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8 -->
+            <div class="hospital-box" id="hospital-ittefaq">
+                <div class="hospital-badge-type">Trust Hospital</div>
+                <div class="hospital-card-header">
+                    <img src="images/hospitalslahore/Ittefaq Hospital Lahore, private hospital building exterior, professional healthcare architecture, medical facility in Pakistan, hospital entrance with signage, professional profile image.jpg" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Ittefaq Hospital</h2>
+                        <span class="location-tag">📍 Model Town, Lahore</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Well-established non-profit general hospital providing reliable treatment, dialysis, and emergency care.</p>
+                <div class="contact-number">📞 Official Phone: 042-35881980</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Emergency</span><span>Cardiology</span><span>Dialysis</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/924235881980', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9 -->
+            <div class="hospital-box" id="hospital-farooq">
+                <div class="hospital-badge-type">Private Hospital</div>
+                <div class="hospital-card-header">
+                    <img src="images/hospitalslahore/Farooq Hospital Lahore, modern private hospital building exterior, contemporary healthcare architecture, professional medical facility in Pakistan, hospital entrance with signage, professional profile image.jpg" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Farooq Hospital</h2>
+                        <span class="location-tag">📍 Thokar Niaz Baig, Lahore</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Comprehensive medical center featuring round-the-clock emergency assistance and pharmacy support.</p>
+                <div class="contact-number">📞 Official Phone: 042-35296061</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>24/7 ER</span><span>Pharmacy</span><span>Inpatient</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/924235296061', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10 -->
+            <div class="hospital-box" id="hospital-omar">
+                <div class="hospital-badge-type">Specialized Center</div>
+                <div class="hospital-card-header">
+                    <img src="images/hospitalslahore/Omar Hospital Lahore, modern private hospital building exterior, contemporary healthcare architecture, professional medical facility in Pakistan, hospital entrance with signage, professional profile image.jpg" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Omar Hospital & Cardiac Centre</h2>
+                        <span class="location-tag">📍 Jail Road, Lahore</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Advanced medical institution focused heavily on cardiovascular health, heart surgery, and diagnostics.</p>
+                <div class="contact-number">📞 Official Phone: 042-35756771</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Cardiology</span><span>Cardiac ICU</span><span>Surgery</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/924235756771', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 11 -->
+            <div class="hospital-box" id="hospital-general">
+                <div class="hospital-badge-type">Government Teaching</div>
+                <div class="hospital-card-header">
+                    <img src="images/hospitalslahore/Lahore General Hospital, large government teaching hospital building exterior, professional healthcare architecture, medical facility in Pakistan, hospital entrance with signage, professional profile image.jpg" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Lahore General Hospital</h2>
+                        <span class="location-tag">📍 Ferozepur Road, Lahore</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Large public sector hospital housing specialized neurosurgery wards and major accident departments.</p>
+                <div class="contact-number">📞 Official Phone: 042-99264091</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Neurosurgery</span><span>Trauma</span><span>Emergency</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/924299264091', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 12 -->
+            <div class="hospital-box" id="hospital-surgimed">
+                <div class="hospital-badge-type">Private Hospital</div>
+                <div class="hospital-card-header">
+                    <img src="images/hospitalslahore/Surgimed Hospital Lahore, modern private hospital building exterior, contemporary healthcare architecture, professional medical facility in Pakistan, hospital entrance with signage, professional profile image.jpg" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Surgimed Hospital</h2>
+                        <span class="location-tag">📍 Gulberg V, Lahore</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Established private medical facility offering dedicated surgical suites and expert clinical consultants.</p>
+                <div class="contact-number">📞 Official Phone: 042-35712953</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Surgery</span><span>OPD</span><span>Diagnostics</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/924235712953', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 13 -->
+            <div class="hospital-box" id="hospital-ghurkiturst">
+                <div class="hospital-badge-type">Trust Teaching</div>
+                <div class="hospital-card-header">
+                    <img src="images/hospitalslahore/Ghurki Trust Teaching Hospital Lahore, modern teaching hospital building exterior, contemporary healthcare architecture, professional medical facility in Pakistan, hospital entrance with signage, professional profile imag.jpg" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Ghurki Trust Teaching Hospital</h2>
+                        <span class="location-tag">📍 Jallo, Lahore</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Major charitable medical hub widely acclaimed for orthopedic treatments and physical rehabilitation.</p>
+                <div class="contact-number">📞 Official Phone: 042-36582103</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Orthopedics</span><span>Trust</span><span>Rehab</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/924236582103', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 14 -->
+            <div class="hospital-box" id="hospital-shalamar">
+                <div class="hospital-badge-type">Non-Profit Trust</div>
+                <div class="hospital-card-header">
+                    <img src="images/hospitalslahore/Shalamar Hospital Lahore, modern private hospital building exterior, contemporary healthcare architecture, professional medical facility in Pakistan, hospital entrance with signage, professional profile image.jpg" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Shalamar Hospital</h2>
+                        <span class="location-tag">📍 Shalimar Link Road, Lahore</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Fully equipped non-profit teaching institution providing community-oriented medical care.</p>
+                <div class="contact-number">📞 Official Phone: 042-36855651</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Pediatrics</span><span>Gynecology</span><span>Medicine</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/924236855651', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 15 -->
+            <div class="hospital-box" id="hospital-doctors">
+                <div class="hospital-badge-type">Private Hospital</div>
+                <div class="hospital-card-header">
+                    <img src="images/hospitalslahore/Doctors Hospital & Medical Centre Lahore, modern private hospital building exterior, contemporary healthcare architecture, professional medical facility in Pakistan, hospital entrance with signage, professional profile im.jpg" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Doctors Hospital & Medical Centre</h2>
+                        <span class="location-tag">📍 Johar Town, Lahore</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Extensive private healthcare facility featuring intensive care units and multi-disciplinary doctors.</p>
+                <div class="contact-number">📞 Official Phone: 042-35302700</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>ICU</span><span>Emergency</span><span>Private Suites</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/924235302700', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 16 -->
+            <div class="hospital-box" id="hospital-chughtai">
+                <div class="hospital-badge-type">Diagnostics Hub</div>
+                <div class="hospital-card-header">
+                    <img src="images/hospitalslahore/Chughtai Medical Center Complex Lahore, modern medical center building exterior, contemporary healthcare architecture, professional diagnostic and medical facility in Pakistan, hospital entrance with signage, professional.jpg" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Chughtai Medical Center Complex</h2>
+                        <span class="location-tag">📍 Jail Road, Lahore</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Central diagnostic headquarters providing broad testing services, pharmacy, and specialist doctors.</p>
+                <div class="contact-number">📞 Official Phone: 042-111-244-244</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Lab Tests</span><span>Consultation</span><span>Pharmacy</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/9242111244244', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 17 -->
+            <div class="hospital-box" id="hospital-fazal">
+                <div class="hospital-badge-type">Community Hospital</div>
+                <div class="hospital-card-header">
+                    <img src="images/hospitalslahore/Fazal Hospital Lahore, modern private hospital building exterior, contemporary healthcare architecture, professional medical facility in Pakistan, hospital entrance with signage, professional profile image.jpg" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Fazal Hospital</h2>
+                        <span class="location-tag">📍 Ichhra, Lahore</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Accessible neighborhood medical center providing dependable outpatient treatments and patient care.</p>
+                <div class="contact-number">📞 Official Phone: 042-37576570</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>General Care</span><span>OPD</span><span>Pharmacy</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/924237576570', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 18 -->
+            <div class="hospital-box" id="hospital-punjabinstitute">
+                <div class="hospital-badge-type">Specialized Institute</div>
+                <div class="hospital-card-header">
+                    <img src="images/hospitalslahore/Punjab Institute of Cardiology PIC Lahore, modern cardiac hospital building exterior, specialized cardiology center architecture, professional medical facility in Pakistan, hospital entrance with signage, professional pro.jpg" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Punjab Institute of Cardiology (PIC)</h2>
+                        <span class="location-tag">📍 Jail Road, Lahore</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Premier specialized public institution dedicated entirely to heart conditions and complex cardiac surgery.</p>
+                <div class="contact-number">📞 Official Phone: 042-99203051</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Cardiology</span><span>Angiography</span><span>CCU</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/924299203051', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 19 -->
+            <div class="hospital-box" id="hospital-Thechildrens">
+                <div class="hospital-badge-type">Specialized Pediatric</div>
+                <div class="hospital-card-header">
+                    <img src="images/hospitalslahore/The Children's Hospital Lahore, modern pediatric hospital building exterior, specialized children's healthcare architecture, professional medical facility in Pakistan, hospital entrance with signage, professional profile.jpg" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>The Children’s Hospital Lahore</h2>
+                        <span class="location-tag">📍 Ferozepur Road, Lahore</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Massive specialized pediatric healthcare complex offering advanced care for infants and children.</p>
+                <div class="contact-number">📞 Official Phone: 042-99230901</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Pediatrics</span><span>NICU</span><span>Emergency</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/924299230901', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 20 -->
+            <div class="hospital-box" id="hospital-mianmunshi">
+                <div class="hospital-badge-type">Government DHQ</div>
+                <div class="hospital-card-header">
+                    <img src="images/hospitalslahore/Mian Munshi DHQ Hospital Lahore, district headquarters hospital building exterior, government healthcare facility architecture, professional medical facility in Pakistan, hospital entrance with signage, professional profi.jpg" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Mian Munshi DHQ Hospital</h2>
+                        <span class="location-tag">📍 Bund Road, Lahore</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">District headquarters medical facility offering essential healthcare support and emergency services.</p>
+                <div class="contact-number">📞 Official Phone: 042-99213500</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>DHQ</span><span>Emergency</span><span>General Ward</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/924299213500', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 21 -->
+            <div class="hospital-box id=hopital-Alshifa">
+                <div class="hospital-badge-type">Specialized Eye Care</div>
+                <div class="hospital-card-header">
+                    <img src="images/hospitalslahore/Ittefaq Hospital Lahore, private hospital building exterior, professional healthcare architecture, medical facility in Pakistan, hospital entrance with signage, professional profile image.jpg" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Al-Shifa Trust Eye Hospital</h2>
+                        <span class="location-tag">📍 Canal Bank, Lahore</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Dedicated eye care hospital providing comprehensive ophthalmology services and laser treatments.</p>
+                <div class="contact-number">📞 Official Phone: 042-35292051</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Ophthalmology</span><span>Surgery</span><span>Laser Care</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/924235292051', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 22 -->
+            <div class="hospital-box" id="hospital-Hamidiah">
+                <div class="hospital-badge-type">Private Hospital</div>
+                <div class="hospital-card-header">
+                    <img src="images/hospitalslahore/Hameed Latif Hospital Lahore, modern private hospital building exterior, contemporary healthcare architecture, professional medical facility in Pakistan, clean modern design with hospital signage, professional profile ima.jpg" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Hamidiah Hospital</h2>
+                        <span class="location-tag">📍 Multan Road, Lahore</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Modern private medical center offering multi-specialty consultations and diagnostic support.</p>
+                <div class="contact-number">📞 Official Phone: 042-37805122</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>General Surgery</span><span>OPD</span><span>Lab</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/924237805122', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 23 -->
+            <div class="hospital-box id=hospital-Wapda">
+                <div class="hospital-badge-type">General Hospital</div>
+                <div class="hospital-card-header">
+                    <img src="profile-placeholder.jpg" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Wapda Teaching Hospital</h2>
+                        <span class="location-tag">📍 Complex Road, Lahore</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Comprehensive medical institution equipped with specialized diagnostic departments and inpatient wards.</p>
+                <div class="contact-number">📞 Official Phone: 042-99211410</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>General Ward</span><span>Diagnostics</span><span>Surgery</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/924299211410', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 24 -->
+            <div class="hospital-box" id="hospital-punjab">
+                <div class="hospital-badge-type">Specialized Center</div>
+                <div class="hospital-card-header">
+                    <img src="profile-placeholder.jpg" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Punjab Institute of Neurosciences (PINS)</h2>
+                        <span class="location-tag">📍 Ferozepur Road, Lahore</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Advanced neurological center dedicated to brain, spine, and complex nervous system treatments.</p>
+                <div class="contact-number">📞 Official Phone: 042-99264030</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Neurosurgery</span><span>Neurology</span><span>ICU</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/924299264030', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Right Side: Fully Interactive Google Map -->
+        <div class="map-container-box">
+            <h3>Interactive City Map</h3>
+            <p class="map-subtitle">Click and explore hospital markers across Lahore</p>
+            <div class="map-frame-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d54418.17267597159!2d74.30392381254399!3d31.52036962294196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1shospitals%20in%20Lahore!5e0!3m2!1sen!2s!4v1718000000000!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+    </div>
+<!-- about lahore hospital -->
+    <section class="content-details-section">
+        
+        <h2>Comprehensive Overview of Lahore Healthcare System</h2>
+        <p>The healthcare infrastructure in Lahore serves as a major medical hub for Punjab, featuring an extensive network of historic government teaching institutions, advanced specialized centers, philanthropic trust hospitals, and cutting-edge private medical facilities. Catering to millions of urban residents and patients traveling from across the province, the city's medical network ensures robust coverage across all clinical specialties, ranging from emergency trauma care and advanced oncology to primary outpatient services and complex surgical procedures.</p>
+
+        <h2>Government Teaching Hospitals and Public Emergency Networks</h2>
+        <p>Public sector medical institutions form the foundational core of emergency healthcare and clinical training in Lahore, managing massive patient volumes with specialized departments:</p>
+        <p><strong>• Mayo Hospital:</strong> One of the oldest and largest public teaching hospitals in South Asia, offering comprehensive emergency services, specialized surgical wards, and multi-disciplinary care.</p>
+        <p><strong>• Jinnah Hospital Lahore:</strong> A major public healthcare complex equipped with modern emergency departments, intensive care units, and specialized clinical treatment blocks.</p>
+        <p><strong>• Services Hospital & General Hospital:</strong> Vital public sector teaching facilities providing round-the-clock emergency assistance, specialized trauma care, and extensive outpatient clinics.</p>
+
+        <h2>Specialized Oncology and Advanced Treatment Centers</h2>
+        <p>Lahore hosts premier specialized institutions dedicated to delivering world-class therapeutic and diagnostic care for complex, life-threatening diseases:</p>
+        <p><strong>• Shaukat Khanum Memorial Cancer Hospital:</strong> A state-of-the-art oncology center providing advanced cancer diagnostics, chemotherapy, radiation therapy, and comprehensive patient care.</p>
+        <p><strong>• Punjab Institute of Cardiology (PIC):</strong> A premier specialized heart hospital offering advanced cardiac care, emergency angioplasty, cardiac surgery, and coronary care units.</p>
+        <p><strong>• Children's Hospital Lahore:</strong> A specialized pediatric medical complex providing advanced child healthcare, neonatal intensive care, and specialized pediatric surgeries.</p>
+
+        <h2>Private Healthcare Excellence and Modern Medical Complexes</h2>
+        <p>Top-tier private hospitals across Lahore maintain rigorous international clinical standards, offering premium patient accommodation and advanced medical technology:</p>
+        <p><strong>• Shalamar Hospital & Ittefaq Hospital:</strong> Renowned non-profit and private teaching hospitals delivering high-end medical care, modern operational suites, and affordable community services.</p>
+        <p><strong>• Hameed Latif Hospital & National Hospital:</strong> Premier private healthcare providers offering specialized maternity suites, advanced ICUs, orthopedic care, and expert consultant clinics.</p>
+        <p><strong>• Hamid Latif and Omar Hospital:</strong> Leading medical complexes delivering specialized surgical interventions, modern diagnostics, and comprehensive inpatient treatments.</p>
+
+        <h2>Community Integration, Diagnostics, and Preventive Health Initiatives</h2>
+        <p>Lahore's healthcare ecosystem extends deeply into local communities through advanced diagnostic networks, neighborhood clinics, and proactive public health campaigns:</p>
+        <p><strong>• Diagnostic Laboratories:</strong> Extensive city-wide networks offering precise laboratory testing, advanced radiology, and comprehensive health screening packages.</p>
+        <p><strong>• Outpatient Medical Clinics:</strong> Neighborhood centers providing accessible specialist consultations, general medicine, and pharmacy support.</p>
+        <p><strong>• Public Health Outreach:</strong> Collaborative health initiatives driving preventive care, maternal-child health programs, vaccination drives, and chronic disease management.</p>
+
+    </section>
+
+<!-- whatspp -->
+
+<a href="https://wa.me/" target="_blank" class="whatsapp-sticky-btn" title="Chat on WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+
+
+
+
+<!-- footer section -->
+ <footer class="main-footer">
+    <div class="footer-grid">
+        <div class="footer-col firstdiv">
+            <h3>HealthVibe</h3>
+            <p>Pakistan's platform for finding, comparing, and booking doctors.</p>
+            <div class="social-links" >
+            <a href="#" style="color: white; margin-right: 15px; font-size: 20px;"><i class="fab fa-facebook"></i></a>
+            <a href="#" style="color: white; margin-right: 15px; font-size: 20px;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-col">
+            <h4>FIND DOCTORS</h4>
+            <ul>
+                <li><a href="cardiologist.html">Cardiologist</a></li>
+                <li><a href="dentist.html">Dentist</a></li>
+                <li><a href="dermatologist.html">Dermatologist</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>HOSPITALS</h4>
+            <ul>
+                <li><a href="hospitals-lahore.html">Lahore</a></li>
+                <li><a href="hospitals-karachi.html">Karachi</a></li>
+                <li><a href="hospitals-islamabad.html">Islamabad</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>PHARMACY</h4>
+            <ul>
+                <li><a href="medicines.html"> Medicines</a></li>
+                <li><a href="baby-care.html">Baby Care</a></li>
+                <li><a href="join-as-doctor.html">Join as Doctor</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 HealthVibe. All rights reserved. | Made for patients across Pakistan.</p>
+    </div>
+</footer>
+<!-- ai chat bot -->
+ <!-- Floating AI Chatbot Button & Window -->
+<div class="floating-ai-btn-container">
+    <button onclick="toggleAiChatWindow()" class="animated-glow-btn-float" title="Ask HealthVibe AI Assistant">
+        <i class="fas fa-robot"></i>
+    </button>
+    
+    <div id="aiFloatingWindow" class="ai-chat-window-float" style="display: none;">
+        <div class="ai-window-header">
+            <h3><i class="fas fa-stethoscope"></i> HealthVibe Smart Assistant</h3>
+            <button onclick="toggleAiChatWindow()" class="close-window-btn">&times;</button>
+        </div>
+        <div id="aiChatOutput" class="ai-output-box-float">Hello! Welcome to HealthVibe. How can I assist you with hospitals or medical guidance today?</div>
+        <div class="ai-input-row-float">
+            <input type="text" id="aiUserInput" placeholder="Type your medical question here..." onkeypress="if(event.key=='Enter') askGroqAI()">
+            <button onclick="askGroqAI()" class="send-btn-float"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>

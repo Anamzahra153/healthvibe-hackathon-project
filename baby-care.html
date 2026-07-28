@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthVibe</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header Section -->
+<header class="site-header">
+  <div class="headerinnerdiv">
+    <!-- first div -->
+    <a href="index.html" class="logo-link">
+        <div id="my-logo">
+            <span class="health">Health</span><span class="vibe">Vibe</span>
+        </div>
+    </a>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <!-- second div -->
+    <div>
+        <nav class="nav-menu" id="navMenu">
+            
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Find Doctors ▾</span>
+                <div class="dropdown-panel">
+                    <a href="dermatologist.html">Dermatologist</a>
+                    <a href="cardiologist.html">Cardiologist</a>
+                    <a href="dentist.html">Dentist</a>
+                </div>
+            </div>
+
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Hospitals ▾</span>
+                <div class="dropdown-panel">
+                    <a href="hospitals-lahore.html">Lahore</a>
+                    <a href="hospitals-karachi.html">Karachi</a>
+                    <a href="hospitals-islamabad.html">Islamabad</a>
+                </div>
+            </div>
+            
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Pharmacy ▾</span>
+                <div class="dropdown-panel">
+                    <a href="medicines.html">Medicines</a>
+                    <a href="baby-care.html">Baby Care</a>
+                </div>
+            </div>
+
+            <!-- Mobile only buttons (Sirf mobile par menu ke andar dikhenge) -->
+            <div class="mobile-only-actions">
+                <a href="book-appointment.html" class="btn-primary">Book Appointment</a>
+                <a href="join-as-doctor.html" class="btn-secondary">Join as Doctor</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- third div -->
+    <div class="header-actions">
+        <a href="book-appointment.html" class="btn-primary">Book Appointment</a>
+        <a href="join-as-doctor.html" class="btn-secondary">Join as Doctor</a>
+    </div>
+ </div>
+</header>
+
+<!-- babay care  -->
+ <!-- Baby Care Banner Section -->
+<section class="pharmacy-banner">
+    <div class="banner-container">
+        <h1>Baby Care Essentials</h1>
+        <p>Gentle, safe, and trusted products for your little one's everyday needs.</p>
+        
+        <!-- Search Bar with Button -->
+        <div class="search-box-container">
+            <input type="text" id="medicineSearch" placeholder="Search for baby products (e.g. Pampers, Johnson's)..." onkeyup="searchMedicines()">
+            <button class="search-btn" onclick="searchMedicines()">Search</button>
+        </div>
+    </div>
+</section>
+
+<!-- Baby Care Cards Section -->
+<section class="medicines-section">
+    <div class="container">
+        <h2 id="sectionHeading">Available Baby Products</h2>
+        
+        <!-- No Product Found Message (By default hidden) -->
+        <div id="noProductMsg" class="no-product-msg" style="display: none;">
+            <h3>No baby product found matching your search.</h3>
+            <p>Please check the spelling or try searching for another item.</p>
+        </div>
+
+        <div class="medicines-grid" id="medicinesGrid">
+            <!-- Card 1 -->
+            <div class="medicine-card">
+                <span class="discount-badge">10% OFF</span>
+                <div class="medicine-img-box"><img src="images/babycare/pampersbabydry.png" alt="Baby Product"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Pampers</span>
+                        <div class="rating-box">★ 4.9 <span>(240)</span></div>
+                    </div>
+                    <h3>Pampers Baby-Dry Diapers</h3>
+                    <p class="dosage">Medium | Pack of 60</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 2,150</span>
+                            <span class="old-price">Rs. 2,390</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="medicine-card">
+                <span class="discount-badge">15% OFF</span>
+                <div class="medicine-img-box"><img src="images/babycare/johsonbabyshampo.png" alt="Baby Product"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Johnson's</span>
+                        <div class="rating-box">★ 4.8 <span>(185)</span></div>
+                    </div>
+                    <h3>Johnson's Baby Shampoo</h3>
+                    <p class="dosage">500ml | No More Tears</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 850</span>
+                            <span class="old-price">Rs. 999</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="medicine-card">
+                <div class="medicine-img-box"><img src="images/babycare/molfixpants.png" alt="Baby Product"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Molfix</span>
+                        <div class="rating-box">★ 4.7 <span>(150)</span></div>
+                    </div>
+                    <h3>Molfix Pants Diapers</h3>
+                    <p class="dosage">Large | Pack of 54</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 1,950</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="medicine-card">
+                <span class="discount-badge">12% OFF</span>
+                <div class="medicine-img-box"><img src="images/babycare/johesonsbabylotio.png" alt="Baby Product"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Johnson's</span>
+                        <div class="rating-box">★ 4.9 <span>(310)</span></div>
+                    </div>
+                    <h3>Johnson's Baby Lotion</h3>
+                    <p class="dosage">400ml | Soft & Smooth</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 750</span>
+                            <span class="old-price">Rs. 850</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="medicine-card">
+                <div class="medicine-img-box"><img src="images/babycare/papersbabywipes.png" alt="Baby Product"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Pampers</span>
+                        <div class="rating-box">★ 4.8 <span>(112)</span></div>
+                    </div>
+                    <h3>Pampers Baby Wipes</h3>
+                    <p class="dosage">Sensitive | 72 Sheets</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 380</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="medicine-card">
+                <span class="discount-badge">10% OFF</span>
+                <div class="medicine-img-box"><img src="images/babycare/cerelacwheat.png" alt="Baby Product"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Nestle</span>
+                        <div class="rating-box">★ 4.9 <span>(420)</span></div>
+                    </div>
+                    <h3>Nestle Cerelac Wheat</h3>
+                    <p class="dosage">Stage 1 | 350g Pack</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 670</span>
+                            <span class="old-price">Rs. 745</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="medicine-card">
+                <div class="medicine-img-box"><img src="images/babycare/sudocrem.png" alt="Baby Product"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Sudocrem</span>
+                        <div class="rating-box">★ 4.9 <span>(290)</span></div>
+                    </div>
+                    <h3>Sudocrem Antiseptic Cream</h3>
+                    <p class="dosage">125g | Diaper Rash Care</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 1,200</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="medicine-card">
+                <span class="discount-badge">20% OFF</span>
+                <div class="medicine-img-box"><img src="images/babycare/canbebe.png" alt="Baby Product"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Canbebe</span>
+                        <div class="rating-box">★ 4.6 <span>(98)</span></div>
+                    </div>
+                    <h3>Canbebe Junior Diapers</h3>
+                    <p class="dosage">Size 5 | Pack of 48</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 1,600</span>
+                            <span class="old-price">Rs. 2,000</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 9 -->
+            <div class="medicine-card">
+                <div class="medicine-img-box"><img src="images/babycare/jhonsonspowder.png" alt="Baby Product"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Johnson's</span>
+                        <div class="rating-box">★ 4.8 <span>(175)</span></div>
+                    </div>
+                    <h3>Johnson's Baby Powder</h3>
+                    <p class="dosage">200g | Blossoms Fresh</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 450</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 10 -->
+            <div class="medicine-card">
+                <span class="discount-badge">5% OFF</span>
+                <div class="medicine-img-box"><img src="images/babycare/nestlenan.png" alt="Baby Product"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Nestle</span>
+                        <div class="rating-box">★ 4.9 <span>(380)</span></div>
+                    </div>
+                    <h3>Nestle NAN optipro 2</h3>
+                    <p class="dosage">Follow-up Formula | 400g</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 2,400</span>
+                            <span class="old-price">Rs. 2,550</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 11 -->
+            <div class="medicine-card">
+                <div class="medicine-img-box"><img src="images/babycare/pigeonfeeding.png" alt="Baby Product"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Pigeon</span>
+                        <div class="rating-box">★ 4.7 <span>(90)</span></div>
+                    </div>
+                    <h3>Pigeon Feeding Bottle</h3>
+                    <p class="dosage">PPSU | 240ml Anti-Colic</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 1,150</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 12 -->
+            <div class="medicine-card">
+                <span class="discount-badge">15% OFF</span>
+                <div class="medicine-img-box"><img src="images/babycare/himalayaoil.png" alt="Baby Product"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Himalaya</span>
+                        <div class="rating-box">★ 4.8 <span>(215)</span></div>
+                    </div>
+                    <h3>Himalaya Baby Massage Oil</h3>
+                    <p class="dosage">200ml | Olive & Winter Cherry</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 520</span>
+                            <span class="old-price">Rs. 610</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 13 -->
+            <div class="medicine-card">
+                <div class="medicine-img-box"><img src="images/babycare/himalayasoap.png" alt="Baby Product"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Himalaya</span>
+                        <div class="rating-box">★ 4.7 <span>(140)</span></div>
+                    </div>
+                    <h3>Himalaya Gentle Baby Soap</h3>
+                    <p class="dosage">125g | Pack of 3</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 420</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 14 -->
+            <div class="medicine-card">
+                <span class="discount-badge">10% OFF</span>
+                <div class="medicine-img-box"><img src="images/babycare/meijigrowing.png" alt="Baby Product"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Meiji</span>
+                        <div class="rating-box">★ 4.9 <span>(340)</span></div>
+                    </div>
+                    <h3>Meiji Growing Up Formula</h3>
+                    <p class="dosage">Step 3 | 400g Tin</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 2,600</span>
+                            <span class="old-price">Rs. 2,890</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 15 -->
+            <div class="medicine-card">
+                <div class="medicine-img-box"><img src="images/babycare/aventsoothie.png" alt="Baby Product"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Philips Avent</span>
+                        <div class="rating-box">★ 4.9 <span>(190)</span></div>
+                    </div>
+                    <h3>Avent Soothie Pacifier</h3>
+                    <p class="dosage">0-6 Months | Medical Grade</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 950</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 16 -->
+            <div class="medicine-card">
+                <span class="discount-badge">8% OFF</span>
+                <div class="medicine-img-box"><img src="images/babycare/jhonsonsbathing.png" alt="Baby Product"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Johnson's</span>
+                        <div class="rating-box">★ 4.7 <span>(130)</span></div>
+                    </div>
+                    <h3>Johnson's Baby Bathing Bar</h3>
+                    <p class="dosage">100g | Milk Soap</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 180</span>
+                            <span class="old-price">Rs. 195</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 17 -->
+            <div class="medicine-card">
+                <div class="medicine-img-box"><img src="images/babycare/molfixpants.png" alt="Baby Product"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Molfix</span>
+                        <div class="rating-box">★ 4.8 <span>(165)</span></div>
+                    </div>
+                    <h3>Molfix New Born Diapers</h3>
+                    <p class="dosage">Size 1 | Pack of 30</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 980</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 18 -->
+            <div class="medicine-card">
+                <span class="discount-badge">10% OFF</span>
+                <div class="medicine-img-box"><img src="images/babycare/cerelac.png" alt="Baby Product"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Nestle</span>
+                        <div class="rating-box">★ 4.8 <span>(210)</span></div>
+                    </div>
+                    <h3>Nestle Cerelac Rice</h3>
+                    <p class="dosage">Stage 1 | 350g Pack</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 670</span>
+                            <span class="old-price">Rs. 745</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 19 -->
+            <div class="medicine-card">
+                <div class="medicine-img-box"><img src="images/babycare/pampersbabydry.png" alt="Baby Product"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Pampers</span>
+                        <div class="rating-box">★ 4.9 <span>(310)</span></div>
+                    </div>
+                    <h3>Pampers Premium Care</h3>
+                    <p class="dosage">Small | Pack of 36</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 1,450</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 20 -->
+            <div class="medicine-card">
+                <span class="discount-badge">12% OFF</span>
+                <div class="medicine-img-box"><img src="images/babycare/sebamed.png" alt="Baby Product"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Sebamed</span>
+                        <div class="rating-box">★ 4.9 <span>(270)</span></div>
+                    </div>
+                    <h3>Sebamed Baby Bubble Bath</h3>
+                    <p class="dosage">200ml | Extra Gentle</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 1,850</span>
+                            <span class="old-price">Rs. 2,100</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Extra Card 21 -->
+            <div class="medicine-card extra-card">
+                <div class="medicine-img-box"><img src="images/babycare/himalayarash.png" alt="Baby Product"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Himalaya</span>
+                        <div class="rating-box">★ 4.7 <span>(115)</span></div>
+                    </div>
+                    <h3>Himalaya Baby Rash Cream</h3>
+                    <p class="dosage">20g | Herbal Formula</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 250</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Extra Card 22 -->
+            <div class="medicine-card extra-card">
+                <span class="discount-badge">10% OFF</span>
+                <div class="medicine-img-box"><img src="images/babycare/pigeonliquid.png" alt="Baby Product"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Pigeon</span>
+                        <div class="rating-box">★ 4.8 <span>(84)</span></div>
+                    </div>
+                    <h3>Pigeon Liquid Cleanser</h3>
+                    <p class="dosage">500ml | Bottle & Toy Wash</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 1,350</span>
+                            <span class="old-price">Rs. 1,500</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Extra Card 23 -->
+            <div class="medicine-card extra-card">
+                <div class="medicine-img-box"><img src="images/babycare/papersbabywipes.png" alt="Baby Product"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Canbebe</span>
+                        <div class="rating-box">★ 4.6 <span>(72)</span></div>
+                    </div>
+                    <h3>Canbebe Wet Wipes</h3>
+                    <p class="dosage">Value Pack | 64 Sheets</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 290</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Extra Card 24 -->
+            <div class="medicine-card extra-card">
+                <span class="discount-badge">15% OFF</span>
+                <div class="medicine-img-box"><img src="images/babycare/sebamedpowder.png" alt="Baby Product"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Sebamed</span>
+                        <div class="rating-box">★ 4.9 <span>(180)</span></div>
+                    </div>
+                    <h3>Sebamed Baby Powder</h3>
+                    <p class="dosage">100g | Extra Soft</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 1,100</span>
+                            <span class="old-price">Rs. 1,299</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Show More Button Container -->
+        <div class="show-more-container" id="showMoreContainer">
+            <button class="show-more-btn" onclick="showMoreMedicines()">Show More</button>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- footer -->
+
+<!-- footer section -->
+ <footer class="main-footer">
+    <div class="footer-grid">
+        <div class="footer-col firstdiv">
+            <h3>HealthVibe</h3>
+            <p>Pakistan's platform for finding, comparing, and booking doctors.</p>
+            <div class="social-links" >
+            <a href="#" style="color: white; margin-right: 15px; font-size: 20px;"><i class="fab fa-facebook"></i></a>
+            <a href="#" style="color: white; margin-right: 15px; font-size: 20px;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-col">
+            <h4>FIND DOCTORS</h4>
+            <ul>
+                <li><a href="cardiologist.html">Cardiologist</a></li>
+                <li><a href="dentist.html">Dentist</a></li>
+                <li><a href="dermatologist.html">Dermatologist</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>HOSPITALS</h4>
+            <ul>
+                <li><a href="hospitals-lahore.html">Lahore</a></li>
+                <li><a href="hospitals-karachi.html">Karachi</a></li>
+                <li><a href="hospitals-islamabad.html">Islamabad</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>PHARMACY</h4>
+            <ul>
+                <li><a href="medicines.html"> Medicines</a></li>
+                <li><a href="baby-care.html">Baby Care</a></li>
+                <li><a href="join-as-doctor.html">Join as Doctor</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 HealthVibe. All rights reserved. | Made for patients across Pakistan.</p>
+    </div>
+</footer>
+
+<!-- whatspp -->
+
+<a href="https://wa.me/" target="_blank" class="whatsapp-sticky-btn" title="Chat on WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+<!-- ai chat bot -->
+ <!-- Floating AI Chatbot Button & Window -->
+<div class="floating-ai-btn-container">
+    <button onclick="toggleAiChatWindow()" class="animated-glow-btn-float" title="Ask HealthVibe AI Assistant">
+        <i class="fas fa-robot"></i>
+    </button>
+    
+    <div id="aiFloatingWindow" class="ai-chat-window-float" style="display: none;">
+        <div class="ai-window-header">
+            <h3><i class="fas fa-stethoscope"></i> HealthVibe Smart Assistant</h3>
+            <button onclick="toggleAiChatWindow()" class="close-window-btn">&times;</button>
+        </div>
+        <div id="aiChatOutput" class="ai-output-box-float">Hello! Welcome to HealthVibe. How can I assist you with hospitals or medical guidance today?</div>
+        <div class="ai-input-row-float">
+            <input type="text" id="aiUserInput" placeholder="Type your medical question here..." onkeypress="if(event.key=='Enter') askGroqAI()">
+            <button onclick="askGroqAI()" class="send-btn-float"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthVibe</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header Section -->
+<!-- Header Section -->
+<header class="site-header">
+  <div class="headerinnerdiv">
+    <!-- first div -->
+    <a href="index.html" class="logo-link">
+        <div id="my-logo">
+            <span class="health">Health</span><span class="vibe">Vibe</span>
+        </div>
+    </a>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <!-- second div -->
+    <div>
+        <nav class="nav-menu" id="navMenu">
+            
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Find Doctors ▾</span>
+                <div class="dropdown-panel">
+                    <a href="dermatologist.html">Dermatologist</a>
+                    <a href="cardiologist.html">Cardiologist</a>
+                    <a href="dentist.html">Dentist</a>
+                </div>
+            </div>
+
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Hospitals ▾</span>
+                <div class="dropdown-panel">
+                    <a href="hospitals-lahore.html">Lahore</a>
+                    <a href="hospitals-karachi.html">Karachi</a>
+                    <a href="hospitals-islamabad.html">Islamabad</a>
+                </div>
+            </div>
+            
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Pharmacy ▾</span>
+                <div class="dropdown-panel">
+                    <a href="medicines.html">Medicines</a>
+                    <a href="baby-care.html">Baby Care</a>
+                </div>
+            </div>
+
+            <!-- Mobile only buttons (Sirf mobile par menu ke andar dikhenge) -->
+            <div class="mobile-only-actions">
+                <a href="book-appointment.html" class="btn-primary">Book Appointment</a>
+                <a href="join-as-doctor.html" class="btn-secondary">Join as Doctor</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- third div -->
+    <div class="header-actions">
+        <a href="book-appointment.html" class="btn-primary">Book Appointment</a>
+        <a href="join-as-doctor.html" class="btn-secondary">Join as Doctor</a>
+    </div>
+ </div>
+</header>
+
+<!-- medicine card -->
+
+<!-- Pharmacy Banner Section -->
+<section class="pharmacy-banner">
+    <div class="banner-container">
+        <h1>Order Medicines Online</h1>
+        <p>Get genuine medicines delivered straight to your doorstep quickly and safely.</p>
+        
+        <!-- Search Bar with Button -->
+        <div class="search-box-container">
+            <input type="text" id="medicineSearch" placeholder="Search for medicines" onkeyup="searchMedicines()">
+            <button class="search-btn" onclick="searchMedicines()">Search</button>
+        </div>
+    </div>
+</section>
+
+<!-- Medicines Cards Section -->
+<section class="medicines-section">
+    <div class="container">
+        <h2 id="sectionHeading">Available Medicines</h2>
+        
+        <!-- No Product Found Message (By default hidden) -->
+        <div id="noProductMsg" class="no-product-msg" style="display: none;">
+            <h3>No medicine found matching your search.</h3>
+            <p>Please check the spelling or try searching for another medicine.</p>
+        </div>
+
+        <div class="medicines-grid" id="medicinesGrid">
+            <!-- Card 1 -->
+            <div class="medicine-card">
+                <span class="discount-badge">10% OFF</span>
+                <div class="medicine-img-box"><img src="images/medicins/panadol.png" alt="Medicine"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Panadol</span>
+                        <div class="rating-box">★ 4.8 <span>(120)</span></div>
+                    </div>
+                    <h3>Panadol Extra Tablets</h3>
+                    <p class="dosage">500mg | Strip of 20</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 250</span>
+                            <span class="old-price">Rs. 280</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="medicine-card">
+                <span class="discount-badge">15% OFF</span>
+                <div class="medicine-img-box"><img src="images/medicins/brufen2.png" alt="Medicine"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Brufen</span>
+                        <div class="rating-box">★ 4.6 <span>(95)</span></div>
+                    </div>
+                    <h3>Brufen Syrup</h3>
+                    <p class="dosage">100ml | Pain Relief</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 180</span>
+                            <span class="old-price">Rs. 210</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="medicine-card">
+                <div class="medicine-img-box"><img src="images/medicins/disprin.png" alt="Medicine"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Disprin</span>
+                        <div class="rating-box">★ 4.7 <span>(80)</span></div>
+                    </div>
+                    <h3>Disprin Tablets</h3>
+                    <p class="dosage">300mg | Fast Relief</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 120</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="medicine-card">
+                <span class="discount-badge">5% OFF</span>
+                <div class="medicine-img-box"><img src="images/medicins/augmentin.png" alt="Medicine"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Augmentin</span>
+                        <div class="rating-box">★ 4.9 <span>(210)</span></div>
+                    </div>
+                    <h3>Augmentin Tablet</h3>
+                    <p class="dosage">625mg | Antibiotic</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 650</span>
+                            <span class="old-price">Rs. 685</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="medicine-card">
+                <div class="medicine-img-box"><img src="images/medicins/flagyl.png" alt="Medicine"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Flagyl</span>
+                        <div class="rating-box">★ 4.5 <span>(64)</span></div>
+                    </div>
+                    <h3>Flagyl Suspension</h3>
+                    <p class="dosage">400mg | Stomach Care</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 150</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="medicine-card">
+                <span class="discount-badge">10% OFF</span>
+                <div class="medicine-img-box"><img src="images/medicins/calpol.png" alt="Medicine"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Calpol</span>
+                        <div class="rating-box">★ 4.8 <span>(142)</span></div>
+                    </div>
+                    <h3>Calpol Syrup</h3>
+                    <p class="dosage">120ml | Fever Relief</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 140</span>
+                            <span class="old-price">Rs. 155</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="medicine-card">
+                <div class="medicine-img-box"><img src="images/medicins/ponstan.png" alt="Medicine"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Ponstan</span>
+                        <div class="rating-box">★ 4.7 <span>(112)</span></div>
+                    </div>
+                    <h3>Ponstan Forte</h3>
+                    <p class="dosage">500mg | Pain Killer</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 300</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="medicine-card">
+                <span class="discount-badge">20% OFF</span>
+                <div class="medicine-img-box"><img src="images/medicins/rigix.png" alt="Medicine"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Rigix</span>
+                        <div class="rating-box">★ 4.9 <span>(310)</span></div>
+                    </div>
+                    <h3>Rigix Tablets</h3>
+                    <p class="dosage">10mg | Allergy Relief</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 220</span>
+                            <span class="old-price">Rs. 275</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 9 -->
+            <div class="medicine-card">
+                <div class="medicine-img-box"><img src="images/medicins/ventolininhaler.png" alt="Medicine"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Ventolin</span>
+                        <div class="rating-box">★ 4.8 <span>(88)</span></div>
+                    </div>
+                    <h3>Ventolin Inhaler</h3>
+                    <p class="dosage">100mcg | Asthma Care</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 450</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 10 -->
+            <div class="medicine-card">
+                <span class="discount-badge">12% OFF</span>
+                <div class="medicine-img-box"><img src="images/medicins/arinac.png" alt="Medicine"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Arinac</span>
+                        <div class="rating-box">★ 4.6 <span>(145)</span></div>
+                    </div>
+                    <h3>Arinac Forte</h3>
+                    <p class="dosage">Flu & Cold Relief</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 280</span>
+                            <span class="old-price">Rs. 320</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 11 -->
+            <div class="medicine-card">
+                <div class="medicine-img-box"><img src="images/medicins/gravinate.png" alt="Medicine"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Gravinate</span>
+                        <div class="rating-box">★ 4.5 <span>(53)</span></div>
+                    </div>
+                    <h3>Gravinate Tablets</h3>
+                    <p class="dosage">50mg | Nausea Relief</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 110</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 12 -->
+            <div class="medicine-card">
+                <div class="medicine-img-box"><img src="images/medicins/brufen.png" alt="Medicine"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Brufen</span>
+                        <div class="rating-box">★ 4.7 <span>(119)</span></div>
+                    </div>
+                    <h3>Brufen Tablets</h3>
+                    <p class="dosage">400mg | Body Pain</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 200</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 13 -->
+            <div class="medicine-card">
+                <span class="discount-badge">10% OFF</span>
+                <div class="medicine-img-box"><img src="images/medicins/surbex-z.png" alt="Medicine"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Surbex-Z</span>
+                        <div class="rating-box">★ 4.9 <span>(410)</span></div>
+                    </div>
+                    <h3>Surbex-Z Tablets</h3>
+                    <p class="dosage">Vitamins & Zinc</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 550</span>
+                            <span class="old-price">Rs. 610</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 14 -->
+            <div class="medicine-card">
+                <span class="discount-badge">15% OFF</span>
+                <div class="medicine-img-box"><img src="images/medicins/centrum.png" alt="Medicine"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Centrum</span>
+                        <div class="rating-box">★ 4.9 <span>(530)</span></div>
+                    </div>
+                    <h3>Centrum Multivitamin</h3>
+                    <p class="dosage">Daily Health Care</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 1200</span>
+                            <span class="old-price">Rs. 1400</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 15 -->
+            <div class="medicine-card">
+                <div class="medicine-img-box"><img src="images/medicins/gaviscon.png" alt="Medicine"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Gaviscon</span>
+                        <div class="rating-box">★ 4.8 <span>(170)</span></div>
+                    </div>
+                    <h3>Gaviscon Syrup</h3>
+                    <p class="dosage">Acidity & Heartburn</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 350</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 16 -->
+            <div class="medicine-card">
+                <div class="medicine-img-box"><img src="images/medicins/enterogermina.png" alt="Medicine"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Enterogermina</span>
+                        <div class="rating-box">★ 4.7 <span>(92)</span></div>
+                    </div>
+                    <h3>Enterogermina Vials</h3>
+                    <p class="dosage">Gut Health Probiotic</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 850</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 17 -->
+            <div class="medicine-card">
+                <span class="discount-badge">8% OFF</span>
+                <div class="medicine-img-box"><img src="images/medicins/calsup.png" alt="Medicine"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Calsup</span>
+                        <div class="rating-box">★ 4.6 <span>(78)</span></div>
+                    </div>
+                    <h3>Calsup Tablets</h3>
+                    <p class="dosage">Calcium & Vitamin D3</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 400</span>
+                            <span class="old-price">Rs. 435</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 18 -->
+            <div class="medicine-card">
+                <div class="medicine-img-box"><img src="images/medicins/nerurobion.png" alt="Medicine"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Neurobion</span>
+                        <div class="rating-box">★ 4.8 <span>(140)</span></div>
+                    </div>
+                    <h3>Neurobion Tablets</h3>
+                    <p class="dosage">Vitamin B-Complex</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 320</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 19 -->
+            <div class="medicine-card">
+                <span class="discount-badge">10% OFF</span>
+                <div class="medicine-img-box"><img src="images/medicins/risik.png" alt="Medicine"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Risek</span>
+                        <div class="rating-box">★ 4.9 <span>(290)</span></div>
+                    </div>
+                    <h3>Risek Capsule</h3>
+                    <p class="dosage">20mg | Gastric Care</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 380</span>
+                            <span class="old-price">Rs. 425</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 20 -->
+            <div class="medicine-card">
+                <div class="medicine-img-box"><img src="images/medicins/velosef.png" alt="Medicine"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Velosef</span>
+                        <div class="rating-box">★ 4.7 <span>(110)</span></div>
+                    </div>
+                    <h3>Velosef Capsule</h3>
+                    <p class="dosage">500mg | Antibiotic</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 700</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Extra Card 21 -->
+            <div class="medicine-card extra-card">
+                <div class="medicine-img-box"><img src="images/medicins/brufenretard.png" alt="Medicine"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Brufen</span>
+                        <div class="rating-box">★ 4.6 <span>(85)</span></div>
+                    </div>
+                    <h3>Brufen Retard</h3>
+                    <p class="dosage">800mg | Sustained Release</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 310</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Extra Card 22 -->
+            <div class="medicine-card extra-card">
+                <span class="discount-badge">10% OFF</span>
+                <div class="medicine-img-box"><img src="images/medicins/polaf.png" alt="Medicine"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Polaf</span>
+                        <div class="rating-box">★ 4.5 <span>(40)</span></div>
+                    </div>
+                    <h3>Polaf Syrup</h3>
+                    <p class="dosage">Cough Relief</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 190</span>
+                            <span class="old-price">Rs. 210</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Extra Card 23 -->
+            <div class="medicine-card extra-card">
+                <div class="medicine-img-box"><img src="images/medicins/hydrylllin.png" alt="Medicine"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Hydryllin</span>
+                        <div class="rating-box">★ 4.7 <span>(95)</span></div>
+                    </div>
+                    <h3>Hydryllin Elixir</h3>
+                    <p class="dosage">Cold & Cough Syrup</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 240</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Extra Card 24 -->
+            <div class="medicine-card extra-card">
+                <span class="discount-badge">5% OFF</span>
+                <div class="medicine-img-box"><img src="images/medicins/disprine.png" alt="Medicine"></div>
+                <div class="medicine-content">
+                    <div class="card-top-row">
+                        <span class="brand-tag">Disprin</span>
+                        <div class="rating-box">★ 4.8 <span>(130)</span></div>
+                    </div>
+                    <h3>Disprin Direct</h3>
+                    <p class="dosage">Instant Headache Relief</p>
+                    <span class="delivery-info">Express Delivery</span>
+                    <div class="price-row">
+                        <div class="price-container">
+                            <span class="price">Rs. 150</span>
+                            <span class="old-price">Rs. 160</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Show More Button Container -->
+        <div class="show-more-container" id="showMoreContainer">
+            <button class="show-more-btn" onclick="showMoreMedicines()">Show More</button>
+        </div>
+    </div>
+</section>
+
+
+<!-- footer -->
+
+<!-- footer section -->
+ <footer class="main-footer">
+    <div class="footer-grid">
+        <div class="footer-col firstdiv">
+            <h3>HealthVibe</h3>
+            <p>Pakistan's platform for finding, comparing, and booking doctors.</p>
+            <div class="social-links" >
+            <a href="#" style="color: white; margin-right: 15px; font-size: 20px;"><i class="fab fa-facebook"></i></a>
+            <a href="#" style="color: white; margin-right: 15px; font-size: 20px;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-col">
+            <h4>FIND DOCTORS</h4>
+            <ul>
+                <li><a href="cardiologist.html">Cardiologist</a></li>
+                <li><a href="dentist.html">Dentist</a></li>
+                <li><a href="dermatologist.html">Dermatologist</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>HOSPITALS</h4>
+            <ul>
+                <li><a href="hospitals-lahore.html">Lahore</a></li>
+                <li><a href="hospitals-karachi.html">Karachi</a></li>
+                <li><a href="hospitals-islamabad.html">Islamabad</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>PHARMACY</h4>
+            <ul>
+                <li><a href="medicines.html"> Medicines</a></li>
+                <li><a href="baby-care.html">Baby Care</a></li>
+                <li><a href="join-as-doctor.html">Join as Doctor</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 HealthVibe. All rights reserved. | Made for patients across Pakistan.</p>
+    </div>
+</footer>
+
+<!-- whatspp -->
+
+<a href="https://wa.me/" target="_blank" class="whatsapp-sticky-btn" title="Chat on WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+
+<!-- ai chat bot -->
+ <!-- Floating AI Chatbot Button & Window -->
+<div class="floating-ai-btn-container">
+    <button onclick="toggleAiChatWindow()" class="animated-glow-btn-float" title="Ask HealthVibe AI Assistant">
+        <i class="fas fa-robot"></i>
+    </button>
+    
+    <div id="aiFloatingWindow" class="ai-chat-window-float" style="display: none;">
+        <div class="ai-window-header">
+            <h3><i class="fas fa-stethoscope"></i> HealthVibe Smart Assistant</h3>
+            <button onclick="toggleAiChatWindow()" class="close-window-btn">&times;</button>
+        </div>
+        <div id="aiChatOutput" class="ai-output-box-float">Hello! Welcome to HealthVibe. How can I assist you with hospitals or medical guidance today?</div>
+        <div class="ai-input-row-float">
+            <input type="text" id="aiUserInput" placeholder="Type your medical question here..." onkeypress="if(event.key=='Enter') askGroqAI()">
+            <button onclick="askGroqAI()" class="send-btn-float"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>

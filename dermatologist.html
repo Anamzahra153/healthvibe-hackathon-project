@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthVibe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header Section -->
+<header class="site-header">
+  <div class="headerinnerdiv">
+    <!-- first div -->
+    <a href="index.html" class="logo-link">
+        <div id="my-logo">
+            <span class="health">Health</span><span class="vibe">Vibe</span>
+        </div>
+    </a>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <!-- second div -->
+    <div>
+        <nav class="nav-menu" id="navMenu">
+            
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Find Doctors ▾</span>
+                <div class="dropdown-panel">
+                    <a href="dermatologist.html">Dermatologist</a>
+                    <a href="cardiologist.html">Cardiologist</a>
+                    <a href="dentist.html">Dentist</a>
+                </div>
+            </div>
+
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Hospitals ▾</span>
+                <div class="dropdown-panel">
+                    <a href="hospitals-lahore.html">Lahore</a>
+                    <a href="hospitals-karachi.html">Karachi</a>
+                    <a href="hospitals-islamabad.html">Islamabad</a>
+                </div>
+            </div>
+            
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Pharmacy ▾</span>
+                <div class="dropdown-panel">
+                    <a href="medicines.html">Medicines</a>
+                    <a href="baby-care.html">Baby Care</a>
+                </div>
+            </div>
+
+            <!-- Mobile only buttons (Sirf mobile par menu ke andar dikhenge) -->
+            <div class="mobile-only-actions">
+                <a href="book-appointment.html" class="btn-primary">Book Appointment</a>
+                <a href="join-as-doctor.html" class="btn-secondary">Join as Doctor</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- third div -->
+    <div class="header-actions">
+        <a href="book-appointment.html" class="btn-primary">Book Appointment</a>
+        <a href="join-as-doctor.html" class="btn-secondary">Join as Doctor</a>
+    </div>
+ </div>
+</header>
+
+<!-- health vibe layout container -->
+
+<div class="healthvibe-layout-container ">
+    <div class="doctor-results-header">
+        <h1>1,166 Best Dermatologists In <a href="index.html" style="color: inherit; text-decoration: none;">HealthVibe</a> | Top Skin Specialists</h1>
+        <p><a href="index.html">HealthVibe</a> > Dermatologist</p>
+    </div>
+
+ <div class="search-filter-wrapper">
+    <div class="search-box">
+        <input type="text" id="doctorInput" class="doctor-field" list="doctor-categories" placeholder="Search by Doctors ">
+        <datalist id="doctor-categories">
+            <option value="Dermatologist">
+            <option value="Dentist">
+            <option value="Cardiologist">
+        </datalist>
+        <button class="search-submit" onclick="searchDoctor()">Search</button>
+    </div>
+
+    <div class="filter-buttons-wrapper">
+        <button class="filter-btn" onclick="handleDoctorFilter('fee-low', this)">Fee: Low to High</button>
+        <button class="filter-btn" onclick="handleDoctorFilter('rating', this)">Highest Rated</button>
+        <button class="filter-btn active" onclick="handleDoctorFilter('all', this)">All Specialists</button>
+        <button class="filter-btn" onclick="handleDoctorFilter('experienced', this)">15+ / Exp</button>
+    </div>
+ </div>
+</div>
+
+<!-- doctors card section -->
+
+<!-- Doctor Cards Section -->
+<section class="doctors-section">
+    <div class="doctors-grid-container container">
+        
+        <!-- card 1: Dr. Ahmed Raza -->
+        <div class="doctor-card" data-experience="15" data-fee="1500" data-rating="4.9">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctorspage/M1.jpg" alt="Dr. Ahmed Raza">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Ahmed Raza</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Dermatologist, Aesthetic Physician</p>
+                    <p class="qualification">MBBS, FCPS (Dermatology), American Board Certified in Aesthetic Medicine</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 1500</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>510</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>15 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>98%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Acne Treatment</span>
+                <span class="tag">Laser Hair Removal</span>
+                <span class="tag">Anti-Aging</span>
+                <span class="tag">Scars</span>
+            </div>
+        </div>
+
+        <!-- card 2: Dr. Ayesha Tariq -->
+        <div class="doctor-card" data-experience="12" data-fee="1200" data-rating="4.8">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctorspage/F1.jpg" alt="Dr. Ayesha Tariq">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Ayesha Tariq</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Dermatologist, Cosmetologist</p>
+                    <p class="qualification">MBBS, DDSc (Dermatology), Fellowship in Laser & Aesthetics</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 1200</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>480</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>12 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>96%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Skin Whitening</span>
+                <span class="tag">Pigmentation</span>
+                <span class="tag">Chemical Peel</span>
+                <span class="tag">Hair Loss</span>
+            </div>
+        </div>
+
+        <!-- card 3: Dr. Bilal Hassan -->
+        <div class="doctor-card" data-experience="11" data-fee="1000" data-rating="4.7">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctorspage/M10.jpg" alt="Dr. Bilal Hassan">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Bilal Hassan</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Dermatologist, Trichologist</p>
+                    <p class="qualification">MBBS, MRCP (UK), Diploma in Dermatology</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 1000</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>455</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>11 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>95%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Hair Transplant</span>
+                <span class="tag">PRP Treatment</span>
+                <span class="tag">Alopecia</span>
+                <span class="tag">Dandruff</span>
+            </div>
+        </div>
+
+        <!-- card 4: Dr. Maham Shah -->
+        <div class="doctor-card" data-experience="9" data-fee="900" data-rating="4.6">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctorspage/F3.jpg" alt="Dr. Maham Shah">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Maham Shah</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Dermatologist</p>
+                    <p class="qualification">MBBS, FCPS (Dermatology)</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 900</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>425</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>9 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>94%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Eczema</span>
+                <span class="tag">Psoriasis</span>
+                <span class="tag">Fungal Infections</span>
+                <span class="tag">Allergies</span>
+            </div>
+        </div>
+
+        <!-- card 5: Dr. Usman Ghazanfar -->
+        <div class="doctor-card" data-experience="14" data-fee="1400" data-rating="4.8">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctorspage/M11.jpg" alt="Dr. Usman Ghazanfar">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Usman Ghazanfar</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Dermatologist, Laser Specialist</p>
+                    <p class="qualification">MBBS, MSc (Dermatology & Lasers)</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 1400</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>460</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>14 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>97%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Laser Resurfacing</span>
+                <span class="tag">Mole Removal</span>
+                <span class="tag">Warts</span>
+                <span class="tag">Tattoo Removal</span>
+            </div>
+        </div>
+
+        <!-- card 6: Dr. Zainab Noor -->
+        <div class="doctor-card" data-experience="10" data-fee="1100" data-rating="4.7">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctorspage/F4.jpg" alt="Dr. Zainab Noor">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Zainab Noor</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Dermatologist, Pediatric Dermatologist</p>
+                    <p class="qualification">MBBS, FCPS, Fellowship in Pediatric Dermatology</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 1100</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>435</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>10 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>96%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Child Skin Care</span>
+                <span class="tag">Birthmarks</span>
+                <span class="tag">Diaper Rash</span>
+                <span class="tag">Hives</span>
+            </div>
+        </div>
+
+        <!-- card 7: Dr. Farhan Malik -->
+        <div class="doctor-card" data-experience="8" data-fee="800" data-rating="4.5">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctorspage/M14.jpg" alt="Dr. Farhan Malik">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Farhan Malik</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Dermatologist</p>
+                    <p class="qualification">MBBS, Dip. Derm (London)</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 800</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>415</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>8 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>92%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Skin Glow Facials</span>
+                <span class="tag">Dark Circles</span>
+                <span class="tag">Oily Skin</span>
+                <span class="tag">Open Pores</span>
+            </div>
+        </div>
+
+        <!-- card 8: Dr. Ali Ejaz -->
+        <div class="doctor-card more-card" data-experience="7" data-fee="1300" data-rating="4.6">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctorspage/M15.jpg" alt="Dr. Ali Ejaz">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Ali Ejaz</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Dermatologist, Aesthetic Dermatologist</p>
+                    <p class="qualification">MBBS, MCPS (Dermatology)</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 1300</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>400</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>7 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>93%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Botox</span>
+                <span class="tag">Fillers</span>
+                <span class="tag">Skin Tightening</span>
+                <span class="tag">HydraFacial</span>
+            </div>
+        </div>
+
+        <!-- card 9: Dr. Kamran Jamil -->
+        <div class="doctor-card more-card" data-experience="13" data-fee="1250" data-rating="4.7">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctorspage/M16.jpg" alt="Dr. Kamran Jamil">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Kamran Jamil</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Dermatologist, Venereologist</p>
+                    <p class="qualification">MBBS, FCPS (Dermatology)</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 1250</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>440</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>13 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>95%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Skin Infections</span>
+                <span class="tag">STD Treatment</span>
+                <span class="tag">Nail Disorders</span>
+                <span class="tag">Chronic Rash</span>
+            </div>
+        </div>
+
+        <!-- card 10: Dr. Hira Batool -->
+        <div class="doctor-card more-card" data-experience="6" data-fee="750" data-rating="4.4">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctor5.jpg" alt="Dr. Hira Batool">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Hira Batool</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Dermatologist</p>
+                    <p class="qualification">MBBS, D-Derm</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 750</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>385</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>6 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>91%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Sunburn Treatment</span>
+                <span class="tag">Melasma</span>
+                <span class="tag">Dry Skin Care</span>
+                <span class="tag">Consultation</span>
+            </div>
+        </div>
+
+        <!-- card 11: Dr. Nabeel Ahmed -->
+        <div class="doctor-card more-card" data-experience="14" data-fee="1600" data-rating="4.9">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctor4.jpg" alt="Dr. Nabeel Ahmed">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Nabeel Ahmed</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Dermatologist, Dermatosurgeon</p>
+                    <p class="qualification">MBBS, FCPS (Dermatology), Dermatosurgery Fellowship</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 1600</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>450</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>14 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>97%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Skin Biopsy</span>
+                <span class="tag">Cyst Removal</span>
+                <span class="tag">Vitiligo Surgery</span>
+                <span class="tag">Scar Revision</span>
+            </div>
+        </div>
+
+        <!-- card 12: Dr. Sadia Tariq -->
+        <div class="doctor-card more-card" data-experience="9" data-fee="1150" data-rating="4.7">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctor5.jpg" alt="Dr. Sadia Tariq">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Sadia Tariq</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Dermatologist, Cosmetologist</p>
+                    <p class="qualification">MBBS, MRCP (UK), Diploma in Aesthetic Medicine</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 1150</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>480</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>9 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>95%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Microneedling</span>
+                <span class="tag">Glutathione Injections</span>
+                <span class="tag">Rosacea</span>
+                <span class="tag">Anti-Aging Care</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div class="load-more-wrapper">
+    <button id="load-more-btn" onclick="showMore()">Load More</button>
+</div>
+<!-- about dermatologist -->
+
+<section class="derm-info-main-wrap container">
+    <div class="derm-content-box container">
+        <h2 class="derm-main-heading">About Dermatologist</h2>
+        <p class="derm-desc-text">HealthVibe offers a list of expert dermatologists and skin specialists. To help you find the best nearby skin specialist for you, we have compiled a list of top dermatologists based on their medical experience, clinic/hospital location, availability hours, fee range, and services, as well as positive reviews from patients.</p>
+
+        <h3 class="derm-sub-heading">Who is a Dermatologist?</h3>
+        <p class="derm-desc-text">A dermatologist is a medical doctor specializing in the treatment of skin, hair, and nail conditions. They provide medical and surgical services for
+             treating various diseases affecting the skin structure,
+              managing severe allergies, skin cancers, and cosmetic enhancements.
+               Dermatologists offer routine care and screenings to provide 
+               comprehensive care for diagnosing and treating dermatological
+                disorders in patients of all ages.A dermatologist is a medical doctor specializing in the treatment of skin, hair, and nail conditions. They provide medical and surgical services for treating various diseases affecting the skin structure, managing severe allergies, skin cancers, and cosmetic enhancements, while offering routine care and screenings for patients of all ages.</p>
+
+        <h3 class="derm-sub-heading">What are the types of Dermatologists?</h3>
+        <p class="derm-desc-text">Within dermatology practice, multiple specializations are dedicated to addressing specific skin and hair health challenges:</p>
+        <ul class="derm-bullet-list">
+            <li><strong>Medical Dermatologists:</strong> Focus on diagnosing and treating systemic skin diseases, infections, chronic rashes, eczema, and psoriasis.</li>
+            <li><strong>Cosmetic Dermatologists:</strong> Specialize in improving the skin's appearance through procedures like laser treatments, fillers, chemical peels, and anti-aging therapies.</li>
+            <li><strong>Dermatopathologists:</strong> Specialize in pathology of the skin, examining skin biopsies under a microscope to diagnose complex skin conditions and cancers.</li>
+            <li><strong>Pediatric Dermatologists:</strong> Focus on diagnosing and treating skin conditions in infants, children, and adolescents, including birthmarks and genetic skin disorders.</li>
+        </ul>
+
+        <h3 class="derm-sub-heading">What conditions are treated by a Dermatologist?</h3>
+        <p class="derm-desc-text">Dermatologists are medical experts who specialize in skin health and aesthetic treatments. They provide diagnosis, treatment, and management for various dermatological conditions, including:</p>
+        <ul class="derm-bullet-list">
+            <li><strong>Acne and Acne Scars:</strong> Chronic skin condition causing pimples, cysts, and scarring, requiring customized topical treatments, extractions, or laser resurfacing.</li>
+            <li><strong>Eczema and Dermatitis:</strong> Inflammatory skin conditions characterized by dry, itchy, red patches and skin irritation.</li>
+            <li><strong>Hair Loss and Thinning:</strong> Conditions like alopecia areata and pattern baldness treated with medical therapies, PRP (Platelet-Rich Plasma), and hair transplants.</li>
+            <li><strong>Skin Infections:</strong> Fungal, bacterial, or viral infections affecting the skin barrier, nails, or scalp.</li>
+            <li><strong>Melasma and Hyperpigmentation:</strong> Dark patches on the skin often caused by hormonal changes, sun exposure, or post-inflammatory reactions.</li>
+            <li><strong>Skin Cancers:</strong> Early detection, mole mapping, and surgical removal of suspicious lesions and malignant skin growths.</li>
+        </ul>
+        <p class="derm-desc-text">Dermatologists are expert medical professionals dedicated to diagnosing, treating, and managing a comprehensive variety of skin, hair, and nail conditions. Their specialized care covers persistent skin challenges such as severe acne and acne scarring, inflammatory conditions like eczema and contact dermatitis, hair thinning and scalp disorders, chronic skin infections, complex pigmentary issues including melasma and hyperpigmentation, as well as the crucial early detection, mole mapping, and surgical removal
+             of skin cancers to ensure long-term dermatological health and safety.</p>
+    </div>
+</section>
+
+<!-- why choose health vibe  for dermatologist-->
+
+<section class="hv-why-sec">
+    <div class="hv-why-wrap container">
+        <div class="hv-why-top">
+            <span class="hv-why-tag">— WHY CHOOSE US</span>
+            <h2 class="hv-why-title">Dedicated Skin & Dermatology Care</h2>
+            <p class="hv-why-desc">We make it seamless and secure to connect with verified skin specialists, ensuring you get the right diagnosis and treatment plan without any hassle.</p>
+        </div>
+
+        <div class="hv-why-grid">
+            <!-- Feature 1 -->
+            <div class="hv-why-card">
+                <div class="hv-why-icon-box">🛡️</div>
+                <h3 class="hv-why-card-title">Verified Skin Experts</h3>
+                <p class="hv-why-card-text">All dermatologists on our platform are fully licensed, highly experienced, and verified through professional medical credentials.</p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="hv-why-card">
+                <div class="hv-why-icon-box">⚡</div>
+                <h3 class="hv-why-card-title">Instant Online Booking</h3>
+                <p class="hv-why-card-text">Book physical clinic visits or secure video consultations instantly according to your preferred time slot and availability.</p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="hv-why-card">
+                <div class="hv-why-icon-box">💬</div>
+                <h3 class="hv-why-card-title">Patient Reviews & Ratings</h3>
+                <p class="hv-why-card-text">Read authentic feedback and ratings shared by real patients to make informed decisions for your skin health.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- faq questions -->
+
+<!-- FAQ Accordion Section (Marham Exact Style) -->
+    <section class="faq-section">
+     <div class="container"></div>
+        <h2>Frequently Asked Questions about Best Dermatologists in Pakistan</h2>
+        
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>Which symptoms and issues are treated by Dermatologists in Pakistan?</span>
+                <span class="faq-icon">⌄</span>
+            </button>
+            <div class="faq-answer">
+                <p>Dermatologists treat a wide range of skin, hair, and nail conditions including severe acne, eczema, psoriasis, fungal infections, hair loss, pigmentation issues, and anti-aging concerns.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>Who is the best Dermatologist in Pakistan?</span>
+                <span class="faq-icon">⌄</span>
+            </button>
+            <div class="faq-answer">
+                <p>The top dermatologist depends on your specific skin concern, location, and preference for hospital or clinic visits. You can review verified patient ratings and experience profiles on HealthVibe to find the right specialist.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>Which dermatologists are available for online consultation?</span>
+                <span class="faq-icon">⌄</span>
+            </button>
+            <div class="faq-answer">
+                <p>Many experienced skin specialists offer instant video consultations through HealthVibe, allowing you to discuss skin rashes, acne follow-ups, and prescription adjustments remotely.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>How do you choose a Dermatologist in Pakistan?</span>
+                <span class="faq-icon">⌄</span>
+            </button>
+            <div class="faq-answer">
+                <p>Consider factors such as the doctor's qualification, years of clinical experience, patient feedback scores, clinic location, and whether they specialize in medical dermatology or cosmetic treatments.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>How much does a Dermatologist cost in Pakistan?</span>
+                <span class="faq-icon">⌄</span>
+            </button>
+            <div class="faq-answer">
+                <p>Consultation fees typically range from PKR 1,000 to PKR 3,000+ depending on the doctor's experience, reputation, and the city or hospital tier.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>Who is the top skin specialist in Pakistan?</span>
+                <span class="faq-icon">⌄</span>
+            </button>
+            <div class="faq-answer">
+                <p>Top skin specialists practice in major metropolitan hubs like Lahore, Karachi, and Islamabad, holding advanced fellowship certifications and extensive clinical experience.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>Do you have dermatologist under 1000 In Pakistan?</span>
+                <span class="faq-icon">⌄</span>
+            </button>
+            <div class="faq-answer">
+                <p>Yes, several junior consultants and general practitioners offering basic skin care consultations charge under PKR 1,000, particularly at charitable trust clinics and public hospitals.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>Who is the most experienced Dermatologist In Pakistan?</span>
+                <span class="faq-icon">⌄</span>
+            </button>
+            <div class="faq-answer">
+                <p>Highly experienced dermatologists with over 15 to 20 years of practice are affiliated with major teaching hospitals and premier private medical complexes across the country.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>How can I find a Dermatologist near me in Pakistan?</span>
+                <span class="faq-icon">⌄</span>
+            </button>
+            <div class="faq-answer">
+                <p>You can use HealthVibe's city and area filters to instantly locate nearby skin specialists, view their clinic addresses, check available timing slots, and book direct appointments.</p>
+            </div>
+        </div>
+     </div>
+    </section>
+
+<!-- footer section -->
+ <footer class="main-footer">
+    <div class="footer-grid container">
+        <div class="footer-col firstdiv">
+            <h3>HealthVibe</h3>
+            <p>Pakistan's platform for finding, comparing, and booking doctors.</p>
+            <div class="social-links" >
+            <a href="#" style="color: white; margin-right: 15px; font-size: 20px;"><i class="fab fa-facebook"></i></a>
+            <a href="#" style="color: white; margin-right: 15px; font-size: 20px;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-col">
+            <h4>FIND DOCTORS</h4>
+            <ul>
+                <li><a href="cardiologist.html">Cardiologist</a></li>
+                <li><a href="dentist.html">Dentist</a></li>
+                <li><a href="dermatologist.html">Dermatologist</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>HOSPITALS</h4>
+            <ul>
+                <li><a href="hospitals-lahore.html">Lahore</a></li>
+                <li><a href="hospitals-karachi.html">Karachi</a></li>
+                <li><a href="hospitals-islamabad.html">Islamabad</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>PHARMACY</h4>
+            <ul>
+                <li><a href="medicines.html"> Medicines</a></li>
+                <li><a href="baby-care.html">Baby Care</a></li>
+                <li><a href="join-as-doctor.html">Join as Doctor</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 HealthVibe. All rights reserved. | Made for patients across Pakistan.</p>
+    </div>
+</footer>
+
+<!-- whatspp -->
+
+<a href="https://wa.me/" target="_blank" class="whatsapp-sticky-btn" title="Chat on WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+<!-- ai chat bot -->
+ <!-- Floating AI Chatbot Button & Window -->
+<div class="floating-ai-btn-container">
+    <button onclick="toggleAiChatWindow()" class="animated-glow-btn-float" title="Ask HealthVibe AI Assistant">
+        <i class="fas fa-robot"></i>
+    </button>
+    
+    <div id="aiFloatingWindow" class="ai-chat-window-float" style="display: none;">
+        <div class="ai-window-header">
+            <h3><i class="fas fa-stethoscope"></i> HealthVibe Smart Assistant</h3>
+            <button onclick="toggleAiChatWindow()" class="close-window-btn">&times;</button>
+        </div>
+        <div id="aiChatOutput" class="ai-output-box-float">Hello! Welcome to HealthVibe. How can I assist you with hospitals or medical guidance today?</div>
+        <div class="ai-input-row-float">
+            <input type="text" id="aiUserInput" placeholder="Type your medical question here..." onkeypress="if(event.key=='Enter') askGroqAI()">
+            <button onclick="askGroqAI()" class="send-btn-float"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="script.js"></script></body>
+</html>

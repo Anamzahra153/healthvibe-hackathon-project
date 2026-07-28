@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthVibe</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<!-- Header Section -->
+<header class="site-header">
+  <div class="headerinnerdiv">
+    <!-- first div -->
+    <a href="index.html" class="logo-link">
+        <div id="my-logo">
+            <span class="health">Health</span><span class="vibe">Vibe</span>
+        </div>
+    </a>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <!-- second div -->
+    <div>
+        <nav class="nav-menu" id="navMenu">
+            
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Find Doctors ▾</span>
+                <div class="dropdown-panel">
+                    <a href="dermatologist.html">Dermatologist</a>
+                    <a href="cardiologist.html">Cardiologist</a>
+                    <a href="dentist.html">Dentist</a>
+                </div>
+            </div>
+
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Hospitals ▾</span>
+                <div class="dropdown-panel">
+                    <a href="hospitals-lahore.html">Lahore</a>
+                    <a href="hospitals-karachi.html">Karachi</a>
+                    <a href="hospitals-islamabad.html">Islamabad</a>
+                </div>
+            </div>
+            
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Pharmacy ▾</span>
+                <div class="dropdown-panel">
+                    <a href="medicines.html">Medicines</a>
+                    <a href="baby-care.html">Baby Care</a>
+                </div>
+            </div>
+
+            <!-- Mobile only buttons (Sirf mobile par menu ke andar dikhenge) -->
+            <div class="mobile-only-actions">
+                <a href="book-appointment.html" class="btn-primary">Book Appointment</a>
+                <a href="join-as-doctor.html" class="btn-secondary">Join as Doctor</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- third div -->
+    <div class="header-actions">
+        <a href="book-appointment.html" class="btn-primary">Book Appointment</a>
+        <a href="join-as-doctor.html" class="btn-secondary">Join as Doctor</a>
+    </div>
+ </div>
+</header>
+
+
+<!-- hero section -->
+ 
+<section class="hero-section">
+    <div class="hero-container">
+        <!-- Left Content -->
+        <div class="hero-left">
+            <div class="hero-tag">★ #1 Premier Healthcare Platform in Lahore</div>
+            <h1>Feeling unwell?<br>Talk to <span class="highlight">the right doctor</span> in minutes.</h1>
+            <p>Search verified doctors, same-day appointments – in just a call, chat or video. Get expert care, prescriptions and follow-ups, all from the comfort of home.</p>
+            
+            <button class="cta-btn">Start Video Consultation ➔</button>
+            <div class="hero-quick-links">
+    <a href="dermatologist.html" class="quick-pill">
+        <span class="pill-icon">🩺</span> Dermatologist
+    </a>
+    <a href="dentist.html" class="quick-pill">
+        <span class="pill-icon">🦷</span> Dentist
+    </a>
+    <a href="cardiologist.html" class="quick-pill">
+        <span class="pill-icon">❤️</span> Cardiologist
+    </a>
+</div>
+
+            <div class="trust-row">
+                <span>✓ Verified Doctors</span>
+                <span>✓ Instant Booking</span>
+                <span>✓ 100% Secure</span>
+            </div>
+        </div>
+
+        <!-- Right Image with Floating Rating Card -->
+        <div class="hero-right">
+            <div class="hero-image-wrapper">
+                <img src="images/banner4.png" alt="Professional Doctor Consultation">
+                
+                <!-- Floating Rating Card -->
+                <div class="floating-rating-card">
+                    <div class="star-icon">⭐</div>
+                    <div class="rating-content">
+                        <h4>4.9 / 5.0</h4>
+                        <p>Over 20k+ Happy Patients</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Stats Bar -->
+<div class="unique-health-strip">
+    <div class="unique-strip-inner">
+        <div class="unique-stat-box">
+            <span class="unique-num">12,400+</span>
+            <span class="unique-txt">Verified doctors</span>
+        </div>
+        <div class="unique-stat-box">
+            <span class="unique-num">38+</span>
+            <span class="unique-txt">Cities covered</span>
+        </div>
+        <div class="unique-stat-box">
+            <span class="unique-num">2.1M+</span>
+            <span class="unique-txt">Appointments booked</span>
+        </div>
+        <div class="unique-stat-box">
+            <span class="unique-num">4.8 / 5</span>
+            <span class="unique-txt">Average rating</span>
+        </div>
+        <div class="unique-stat-box">
+            <span class="unique-num">24/7</span>
+            <span class="unique-txt">Video consultations</span>
+        </div>
+        
+    </div>
+</div>
+
+<!-- ai chat bot -->
+ <!-- Floating AI Chatbot Button & Window -->
+<div class="floating-ai-btn-container">
+    <button onclick="toggleAiChatWindow()" class="animated-glow-btn-float" title="Ask HealthVibe AI Assistant">
+        <i class="fas fa-robot"></i>
+    </button>
+    
+    <div id="aiFloatingWindow" class="ai-chat-window-float" style="display: none;">
+        <div class="ai-window-header">
+            <h3><i class="fas fa-stethoscope"></i> HealthVibe Smart Assistant</h3>
+            <button onclick="toggleAiChatWindow()" class="close-window-btn">&times;</button>
+        </div>
+        <div id="aiChatOutput" class="ai-output-box-float">Hello! Welcome to HealthVibe. How can I assist you with hospitals or medical guidance today?</div>
+        <div class="ai-input-row-float">
+            <input type="text" id="aiUserInput" placeholder="Type your medical question here..." onkeypress="if(event.key=='Enter') askGroqAI()">
+            <button onclick="askGroqAI()" class="send-btn-float"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+</div>
+
+
+<!-- services seciton -->
+
+<section class="services-section">
+    <div id="service-heading"><h2>Our Services</h2></div>
+    <div class="services-grid">
+        <!-- Service 1 -->
+        <div class="service-card">
+            <div class="service-icon"><i class="fas fa-user-md"></i></div>
+            <h3>Find Doctors</h3>
+            <p>Explore our verified network of medical experts. Easily search for specialists like dermatologists or cardiologists and book your appointment with confidence.</p>
+        </div>
+        
+        <!-- Service 2 -->
+        <div class="service-card">
+            <div class="service-icon"><i class="fas fa-hospital"></i></div>
+            <h3>Hospitals</h3>
+            <p>Access a comprehensive list of top-rated hospitals in your city. View facilities, equipment, and verified patient reviews to make informed healthcare choices.</p>
+        </div>
+        
+        <!-- Service 3 -->
+        <div class="service-card">
+            <div class="service-icon"><i class="fas fa-pills"></i></div>
+            <h3>Pharmacy</h3>
+            <p>Skip the wait and order your prescribed medicines online. Get genuine health supplies and wellness products delivered securely to your doorstep.</p>
+        </div>
+    </div>
+</section>
+
+<!-- trust -->
+ <section class="partners-section">
+    <div class="partners-container">
+        <h2>— OUR TRUSTED PARTNERS</h2>
+        <div class="marquee">
+            <div class="marquee-track">
+                <!-- First Set of Logos -->
+                <div class="partner-logo">
+                    <img src="images/logo/logo1.avif" alt="Partner 1">
+                </div>
+                <div class="partner-logo">
+                    <img src="images/logo/logo2.avif" alt="Partner 2">
+                </div>
+                <div class="partner-logo">
+                    <img src="images/logo/logo3.avif" alt="Partner 3">
+                </div>
+                <div class="partner-logo">
+                    <img src="images/logo/logo4.avif" alt="Partner 4">
+                </div>
+                <div class="partner-logo">
+                    <img src="images/logo/logo5.avif" alt="Partner 5">
+                </div>
+                
+                <!-- Duplicate Set for Seamless Infinite Loop -->
+                <div class="partner-logo">
+                    <img src="images/logo/logo1.avif" alt="Partner 1">
+                </div>
+                <div class="partner-logo">
+                    <img src="images/logo/logo2.avif" alt="Partner 2">
+                </div>
+                <div class="partner-logo">
+                    <img src="images/logo/logo3.avif" alt="Partner 3">
+                </div>
+                <div class="partner-logo">
+                    <img src="images/logo/logo4.avif" alt="Partner 4">
+                </div>
+                <div class="partner-logo">
+                    <img src="images/logo/logo5.avif" alt="Partner 5">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- doctor section -->
+<section class="hv-doc-sec">
+    <div class="hv-doc-wrap ">
+        <div class="hv-sec-top">
+            <span class="hv-top-tag">— TOP RATED THIS WEEK</span>
+            <h2 class="hv-sec-title">Doctors patients keep coming back to.</h2>
+        </div>
+
+        <div class="hv-doc-grid">
+            <!-- Card 1 -->
+            <div class="hv-doc-card">
+                <div class="hv-card-head">
+                    <img src="images/doctor1.webp" alt="Dr. Ayesha Farooq" class="hv-doc-img">
+                    <div class="hv-doc-info">
+                        <h3 class="hv-doc-name">Dr. Ayesha Farooq</h3>
+                        <p class="hv-doc-spec">Dermatologist</p>
+                        <p class="hv-doc-deg">MBBS, FCPS • 14 yrs exp</p>
+                    </div>
+                </div>
+                <div class="hv-card-mid">
+                    <span class="hv-rating">★ 4.9</span>
+                    <span class="hv-loc">Islamabad</span>
+                    <span class="hv-rev">340 reviews</span>
+                </div>
+                <div class="hv-card-foot">
+                    <div class="hv-price">Rs. 1,500 <span class="hv-visit">/ visit</span></div>
+                    <a href="book-appointment.html" class="hv-book-btn">Book Appointment</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="hv-doc-card">
+                <div class="hv-card-head">
+                    <img src="images/doctor2.webp" alt="Dr. Salman Khalid" class="hv-doc-img">
+                    <div class="hv-doc-info">
+                        <h3 class="hv-doc-name">Dr. Salman Khalid</h3>
+                        <p class="hv-doc-spec">Cardiologist</p>
+                        <p class="hv-doc-deg">MBBS, FCPS Cardiology • 19 yrs exp</p>
+                    </div>
+                </div>
+                <div class="hv-card-mid">
+                    <span class="hv-rating">★ 4.8</span>
+                    <span class="hv-loc">Lahore</span>
+                    <span class="hv-rev">510 reviews</span>
+                </div>
+                <div class="hv-card-foot">
+                    <div class="hv-price">Rs. 2,200 <span class="hv-visit">/ visit</span></div>
+                    <a href="book-appointment.html" class="hv-book-btn">Book Appointment</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="hv-doc-card">
+                <div class="hv-card-head">
+                    <img src="images/doctor3.png" alt="Dr. Hina Naveed" class="hv-doc-img">
+                    <div class="hv-doc-info">
+                        <h3 class="hv-doc-name">Dr. Hina Naveed</h3>
+                        <p class="hv-doc-spec">Gynecologist</p>
+                        <p class="hv-doc-deg">MBBS, MCPS • 11 yrs exp</p>
+                    </div>
+                </div>
+                <div class="hv-card-mid">
+                    <span class="hv-rating">★ 4.9</span>
+                    <span class="hv-loc">Karachi</span>
+                    <span class="hv-rev">288 reviews</span>
+                </div>
+                <div class="hv-card-foot">
+                    <div class="hv-price">Rs. 1,800 <span class="hv-visit">/ visit</span></div>
+                    <a href="book-appointment.html" class="hv-book-btn">Book Appointment</a>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="hv-doc-card">
+                <div class="hv-card-head">
+                    <img src="images/doctor4.jpg" alt="Dr. Mohsin Raza" class="hv-doc-img">
+                    <div class="hv-doc-info">
+                        <h3 class="hv-doc-name">Dr. Mohsin Raza</h3>
+                        <p class="hv-doc-spec">Child Specialist</p>
+                        <p class="hv-doc-deg">MBBS, FCPS Paeds • 9 yrs exp</p>
+                    </div>
+                </div>
+                <div class="hv-card-mid">
+                    <span class="hv-rating">★ 4.7</span>
+                    <span class="hv-loc">Rawalpindi</span>
+                    <span class="hv-rev">178 reviews</span>
+                </div>
+                <div class="hv-card-foot">
+                    <div class="hv-price">Rs. 1,300 <span class="hv-visit">/ visit</span></div>
+                    <a href="book-appointment.html" class="hv-book-btn">Book Appointment</a>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="hv-doc-card">
+                <div class="hv-card-head">
+                    <img src="images/doctor5.jpg" alt="Dr. Zara Abbas" class="hv-doc-img">
+                    <div class="hv-doc-info">
+                        <h3 class="hv-doc-name">Dr. Zara Abbas</h3>
+                        <p class="hv-doc-spec">Psychiatrist</p>
+                        <p class="hv-doc-deg">MBBS, FCPS Psychiatry • 6 yrs exp</p>
+                    </div>
+                </div>
+                <div class="hv-card-mid">
+                    <span class="hv-rating">★ 5.0</span>
+                    <span class="hv-loc">Islamabad</span>
+                    <span class="hv-rev">203 reviews</span>
+                </div>
+                <div class="hv-card-foot">
+                    <div class="hv-price">Rs. 2,000 <span class="hv-visit">/ visit</span></div>
+                    <a href="book-appointment.html" class="hv-book-btn">Book Appointment</a>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="hv-doc-card">
+                <div class="hv-card-head">
+                    <img src="images/doctorspage/M1.jpg" alt="Dr. Usman Javed" class="hv-doc-img">
+                    <div class="hv-doc-info">
+                        <h3 class="hv-doc-name">Dr. Usman Javed</h3>
+                        <p class="hv-doc-spec">Orthopedic Surgeon</p>
+                        <p class="hv-doc-deg">MBBS, FCPS Ortho • 16 yrs exp</p>
+                    </div>
+                </div>
+                <div class="hv-card-mid">
+                    <span class="hv-rating">★ 4.8</span>
+                    <span class="hv-loc">Faisalabad</span>
+                    <span class="hv-rev">312 reviews</span>
+                </div>
+                <div class="hv-card-foot">
+                    <div class="hv-price">Rs. 1,900 <span class="hv-visit">/ visit</span></div>
+                    <a href="book-appointment.html" class="hv-book-btn">Book Appointment</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- consultation section -->
+
+
+<section class="video-container ">
+    <div class="video-section ">
+        <div class="content-left">
+            <span class="label">— VIDEO CONSULTATION</span>
+            <h1>Skip the commute. See a doctor from wherever you are.</h1>
+            <p>Same verified doctors, same digital prescription — just on a call. Ideal for follow-ups, prescriptions renewals, and when you can't make it in.</p>
+            <button class="cta-btn" onclick="window.open('https://wa.me/', '_blank')">start video cosultation</button>
+        </div>
+
+      
+     <div class="content-right">
+        <div class="parent-div">
+          <div class="inner-box">
+             <span class="status-text">● Connected - 24-hours</span>
+             <div class="avatar-placeholder">👤</div>
+           </div>
+        </div>
+     </div>
+ </div>
+    
+</section>
+
+<!-- steps between you and doctor -->
+
+<section class="hv-steps-sec">
+    <div class="hv-steps-wrap ">
+        <div class="hv-steps-top">
+            <span class="hv-steps-tag">— HOW HEALTHVIBE WORKS</span>
+            <h2 class="hv-steps-title">Three steps between you and a doctor.</h2>
+        </div>
+
+        <div class="hv-steps-grid">
+            <!-- Step 1 -->
+            <div class="hv-step-box">
+                <span class="hv-step-num">01</span>
+                <h3 class="hv-step-heading">Search & compare</h3>
+                <p class="hv-step-desc">Filter doctors by specialty, city, fee, and availability. Read real reviews from verified patients before you decide.</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="hv-step-box">
+                <span class="hv-step-num">02</span>
+                <h3 class="hv-step-heading">Book instantly</h3>
+                <p class="hv-step-desc">Pick a time slot for an in-clinic visit or a video call. You'll get a confirmation and a reminder before your appointment.</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="hv-step-box">
+                <span class="hv-step-num">03</span>
+                <h3 class="hv-step-heading">Consult & follow up</h3>
+                <p class="hv-step-desc">Meet your doctor in person or on video, get your prescription digitally, and message them again if symptoms change.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- calculater section -->
+
+
+<section class="bmi-section">
+    <div class="bmi-container bmi-section-animate">
+        <!-- Left Content -->
+        <div class="bmi-left">
+            <h2>Calculate Your BMI & Health</h2>
+            <p>Your health starts with understanding your body. Use our precise calculator to check your fitness level, ideal weight, and daily water intake needs.</p>
+            
+            <div class="bmi-features">
+                <div class="bmi-feature-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Track Your Health</span>
+                </div>
+                <div class="bmi-feature-item">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>Understand Your Body</span>
+                </div>
+                <div class="bmi-feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Ideal Weight Range</span>
+                </div>
+                <div class="bmi-feature-item">
+                    <i class="fas fa-tint"></i>
+                    <span>Water Intake Guide</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Calculator Card -->
+        <div class="bmi-card">
+            <div class="input-group">
+            <input type="number" step="0.1" id="bmi-height" placeholder="Enter height in inches">                <input type="number" id="bmi-weight" placeholder="Enter Weight in kg ">
+            </div>
+            <button class="bmi-btn" onclick="calculateHealth()">Calculate Health</button>
+            
+            <!-- Result Box -->
+            <div class="bmi-result" id="bmi-result-box" style="display: none;">
+                <div class="result-item"><strong>BMI Score:</strong> <span id="res-bmi">-</span></div>
+                <div class="result-item"><strong>Status:</strong> <span id="res-status">-</span></div>
+                <div class="result-item"><strong>Ideal Weight:</strong> <span id="res-ideal">-</span></div>
+                <div class="result-item"><strong>Water Intake:</strong> <span id="res-water">-</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- people trust -->
+
+<section class="testimonial-section">
+    
+        <h3 id="testimonialh3">— PATIENT STORIES</h3>
+        <h2 id="testimonialh2">What people are saying.</h2>
+        
+        <div class="testimonial-grid">
+            <!-- Card 1 -->
+            <div class="testimonial-card">
+                <p>I found a dermatologist, booked a same-day slot, and had a prescription within the hour. Didn't set foot in a waiting room.The doctor was attentive as an in-person visit.</p>
+                <div class="user-info">
+                    <div class="avatar">NR</div>
+                    <div>
+                        <strong>Nadia Rehman</strong><br>
+                        <small>Islamabad</small>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="testimonial-card">
+                <p>My father needed a cardiologist urgently. We compared three doctors' reviews and fees in minutes and got an appointment the same day.</p>
+                <div class="user-info">
+                    <div class="avatar" style="background: #d97706;">BA</div>
+                    <div>
+                        <strong>Bilal Ahmed</strong><br>
+                        <small>Lahore</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="testimonial-card">
+                <p>The video consultation for my daughter's follow-up saved us a two-hour drive. The doctor was exactly as attentive as an in-person visit.</p>
+                <div class="user-info">
+                    <div class="avatar" style="background: #4f46e5;">FS</div>
+                    <div>
+                        <strong>Farah Siddiqui</strong><br>
+                        <small>Karachi</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+</section>
+
+
+<!-- footer section -->
+ <footer class="main-footer">
+    <div class="footer-grid ">
+        <div class="footer-col firstdiv">
+            <h3>HealthVibe</h3>
+            <p>Pakistan's platform for finding, comparing, and booking doctors.</p>
+            <div class="social-links" >
+            <a href="#" style="color: white; margin-right: 15px; font-size: 20px;"><i class="fab fa-facebook"></i></a>
+            <a href="#" style="color: white; margin-right: 15px; font-size: 20px;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-col">
+            <h4>FIND DOCTORS</h4>
+            <ul>
+                <li><a href="cardiologist.html">Cardiologist</a></li>
+                <li><a href="dentist.html">Dentist</a></li>
+                <li><a href="dermatologist.html">Dermatologist</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>HOSPITALS</h4>
+            <ul>
+                <li><a href="hospitals-lahore.html">Lahore</a></li>
+                <li><a href="hospitals-karachi.html">Karachi</a></li>
+                <li><a href="hospitals-islamabad.html">Islamabad</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>PHARMACY</h4>
+            <ul>
+                <li><a href="medicines.html"> Medicines</a></li>
+                <li><a href="baby-care.html">Baby Care</a></li>
+                <li><a href="join-as-doctor.html">Join as Doctor</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 HealthVibe. All rights reserved. | Made for patients across Pakistan.</p>
+    </div>
+</footer>
+
+    
+
+    
+<a href="https://wa.me/" target="_blank" class="whatsapp-sticky-btn" title="Chat on WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>

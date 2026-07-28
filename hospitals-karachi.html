@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthVibe</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header Section -->
+<header class="site-header">
+  <div class="headerinnerdiv">
+    <!-- first div -->
+    <a href="index.html" class="logo-link">
+        <div id="my-logo">
+            <span class="health">Health</span><span class="vibe">Vibe</span>
+        </div>
+    </a>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <!-- second div -->
+    <div>
+        <nav class="nav-menu" id="navMenu">
+            
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Find Doctors ▾</span>
+                <div class="dropdown-panel">
+                    <a href="dermatologist.html">Dermatologist</a>
+                    <a href="cardiologist.html">Cardiologist</a>
+                    <a href="dentist.html">Dentist</a>
+                </div>
+            </div>
+
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Hospitals ▾</span>
+                <div class="dropdown-panel">
+                    <a href="hospitals-lahore.html">Lahore</a>
+                    <a href="hospitals-karachi.html">Karachi</a>
+                    <a href="hospitals-islamabad.html">Islamabad</a>
+                </div>
+            </div>
+            
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Pharmacy ▾</span>
+                <div class="dropdown-panel">
+                    <a href="medicines.html">Medicines</a>
+                    <a href="baby-care.html">Baby Care</a>
+                </div>
+            </div>
+
+            <!-- Mobile only buttons (Sirf mobile par menu ke andar dikhenge) -->
+            <div class="mobile-only-actions">
+                <a href="book-appointment.html" class="btn-primary">Book Appointment</a>
+                <a href="join-as-doctor.html" class="btn-secondary">Join as Doctor</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- third div -->
+    <div class="header-actions">
+        <a href="book-appointment.html" class="btn-primary">Book Appointment</a>
+        <a href="join-as-doctor.html" class="btn-secondary">Join as Doctor</a>
+    </div>
+ </div>
+</header>
+
+
+<!-- hospitals in karachi -->
+
+<!-- Page Header Banner -->
+    <header class="hospital-page-banner">
+    <div class="banner-content">
+        <h1>karachi Healthcare Directory</h1>
+        <P>"Access verified addresses, contact numbers, and emergency care for top city hospitals."</P>      
+        <!-- Search Box Banner ke andar -->
+        <div class="search-box-container">
+            <input type="text" id="hospitalSearch" placeholder="Search hospitals, locations and services..." onkeyup="searchAndScrollHospital()">
+            <button class="search-btn" onclick="searchAndScrollHospital()">Search</button>
+        </div>
+    </div>
+</header>
+
+    <!-- Main Content Layout -->
+    <div class="hospital-main-wrapper">
+        
+        <div class="hospitals-container">
+            
+            <!-- 1 -->
+            <div class="hospital-box" id="hospital-Agakhan">
+                <div class="hospital-badge-type">Charitable & Trust</div>
+                <div class="hospital-card-header">
+                    <img src="images/karachihospitals/Agakhan.png" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Aga Khan University Hospital</h2>
+                        <span class="location-tag">📍 Stadium Road, Karachi</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">World-class tertiary care medical center offering comprehensive specialized treatments and advanced diagnostics.</p>
+                <div class="contact-number">📞 Official Phone: 021-111-911-911</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Oncology</span><span>ICU</span><span>Pharmacy</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/9221111911911', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="hospital-box" id="hospital-indus">
+                <div class="hospital-badge-type">Charitable Trust</div>
+                <div class="hospital-card-header">
+                    <img src="images/karachihospitals/Theindus.png" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Indus Hospital & Health Network</h2>
+                        <span class="location-tag">📍 Korangi Crossing, Karachi</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Major multidisciplinary healthcare institution providing completely free, high-quality medical services to all.</p>
+                <div class="contact-number">📞 Official Phone: 021-35112709</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>24/7 ER</span><span>Cardiology</span><span>Pediatrics</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/922135112709', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="hospital-box" id="hospital-Dow">
+                <div class="hospital-badge-type">Government Teaching</div>
+                <div class="hospital-card-header">
+                    <img src="images/karachihospitals/dow.png" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info"
+                        <h2>Dow University Hospital</h2>
+                        <span class="location-tag">📍 Ojha Campus, Suparco Road, Karachi</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Extensive university hospital equipped with modern surgical suites, intensive care units, and research centers.</p>
+                <div class="contact-number">📞 Official Phone: 021-99261472</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Trauma</span><span>Surgery</span><span>Diagnostics</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/922199261472', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="hospital-box" id="hospital-Liaquat">
+                <div class="hospital-badge-type">Private Hospital</div>
+                <div class="hospital-card-header">
+                    <img src="images/karachihospitals/Liaquat.png" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Liaquat National Hospital</h2>
+                        <span class="location-tag">📍 National Stadium Road, Karachi</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Renowned private medical institution offering specialized clinical care, academic programs, and emergency support.</p>
+                <div class="contact-number">📞 Official Phone: 021-34412000</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Emergency</span><span>ICU</span><span>Radiology</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/922134412000', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5 -->
+            <div class="hospital-box" id="hospital-Southcity">
+                <div class="hospital-badge-type">Private Medical Center</div>
+                <div class="hospital-card-header">
+                    <img src="images/karachihospitals/south.png" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>South City Hospital</h2>
+                        <span class="location-tag">📍 Clifton, Karachi</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Premier healthcare facility delivering advanced inpatient care, maternity suites, and specialized surgical units.</p>
+                <div class="contact-number">📞 Official Phone: 021-35835634</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Maternity</span><span>Surgery</span><span>ICU</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/922135835634', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6 -->
+            <div class="hospital-box" id="hospital-Jinnah">
+                <div class="hospital-badge-type">Government Teaching</div>
+                <div class="hospital-card-header">
+                    <img src="images/karachihospitals/jiinah.png" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Jinnah Postgraduate Medical Centre (JPMC)</h2>
+                        <span class="location-tag">📍 Rafiqui Shaheed Road, Karachi</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Massive public sector medical complex featuring specialized trauma units, cyberknife facility, and broad clinical care.</p>
+                <div class="contact-number">📞 Official Phone: 021-99201300</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Trauma</span><span>Cyberknife</span><span>24/7 ER</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/922199201300', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7 -->
+            <div class="hospital-box" id="hospital-Ziauddin">
+                <div class="hospital-badge-type">Private Hospital</div>
+                <div class="hospital-card-header">
+                    <img src="images/karachihospitals/Dr.Ziauddin.png" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Ziauddin Hospital</h2>
+                        <span class="location-tag">📍 Clifton, Karachi</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Leading multi-specialty healthcare provider delivering expert medical treatment, diagnostics, and patient support.</p>
+                <div class="contact-number">📞 Official Phone: 021-35862937</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Cardiology</span><span>OPD</span><span>Diagnostics</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/922135862937', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8 -->
+            <div class="hospital-box" id="hospital-Patel">
+                <div class="hospital-badge-type">Trust Hospital</div>
+                <div class="hospital-card-header">
+                    <img src="images/karachihospitals/Patel.png" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Patel Hospital</h2>
+                        <span class="location-tag">📍 Gulshan-e-Iqbal, Karachi</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Non-profit modern hospital providing affordable medical treatments, intensive care, and diagnostic services.</p>
+                <div class="contact-number">📞 Official Phone: 021-34833413</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Emergency</span><span>ICU</span><span>Pharmacy</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/922134833413', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9 -->
+            <div class="hospital-box" id="hospital-National-institute">
+                <div class="hospital-badge-type">Specialized Institute</div>
+                <div class="hospital-card-header">
+                    <img src="images/karachihospitals/NICVD.png" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>National Institute of Cardiovascular Diseases (NICVD)</h2>
+                        <span class="location-tag">📍 Rafiqui Shaheed Road, Karachi</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Premier standalone heart hospital providing advanced cardiac care, angioplasty, and bypass surgery.</p>
+                <div class="contact-number">📞 Official Phone: 021-99201271</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Cardiology</span><span>CCU</span><span>Surgery</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/922199201271', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10 -->
+            <div class="hospital-box" id="hospital-governmentteaching">
+                <div class="hospital-badge-type">Government Teaching</div>
+                <div class="hospital-card-header">
+                    <img src="images/karachihospitals/civil.png" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Civil Hospital Karachi (Dr. Ruth K.M. Pfau CHK)</h2>
+                        <span class="location-tag">📍 Baba-e-Urdu Road, Karachi</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">One of the largest public teaching hospitals providing comprehensive medical and emergency services to the city.</p>
+                <div class="contact-number">📞 Official Phone: 021-99215740</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Emergency</span><span>Surgery</span><span>General Ward</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/922199215740', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 11 -->
+            <div class="hospital-box" id="hospital-OMI">
+                <div class="hospital-badge-type">Private Hospital</div>
+                <div class="hospital-card-header">
+                    <img src="images/karachihospitals/OMI.png" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>OMI Hospital</h2>
+                        <span class="location-tag">📍 M.A. Jinnah Road, Karachi</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Well-established private medical center specializing in orthopedic care, spine surgery, and general medicine.</p>
+                <div class="contact-number">📞 Official Phone: 021-32214371</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Orthopedics</span><span>Spine Care</span><span>ICU</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/922132214371', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 12 -->
+            <div class="hospital-box" id="hospital-Medicarecardiac">
+                <div class="hospital-badge-type">Private Hospital</div>
+                <div class="hospital-card-header">
+                    <img src="images/karachihospitals/medicarecardic.png" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Medicare Cardiac & General Hospital</h2>
+                        <span class="location-tag">📍 Shaheed-e-Millat Road, Karachi</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Dedicated hospital offering specialized cardiac care, emergency treatments, and outpatient clinical services.</p>
+                <div class="contact-number">📞 Official Phone: 021-34533031</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Cardiology</span><span>Emergency</span><span>OPD</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/922134533031', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 13 -->
+            
+          <div class="hospital-box" id="hospital-hammad">
+              <div class="hospital-badge-type">Private Medical Centre</div>
+              <div class="hospital-card-header">
+                  <img src="images/karachihospitals/hammad.png" alt="Hospital Profile" class="card-profile-img">
+               <div class="hospital-info">
+            <h2>Hammad Hospital</h2>
+            <span class="location-tag">📍 Gulshan-e-Iqbal, Lahore</span>
+                  </div>
+              </div>
+              <p class="hospital-desc">Reliable healthcare facility offering 24/7 emergency care, specialized clinics, and pharmacy services.</p>
+              <div class="contact-number">📞 Official Phone: 042-35412345</div>
+              <div class="card-footer-row">
+                  <div class="facility-badges"><span>Emergency</span><span>Pharmacy</span><span>OPD</span></div>
+                 <div class="hospital-actions">
+                      <button class="btn-whatsapp" onclick="window.open('https://wa.me/924235412345', '_blank')">WhatsApp</button>
+                      <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                  </div>
+              </div>
+          </div>
+
+          <!-- 14 -->
+          <div class="hospital-box" id="hospital-al-razi">
+              <div class="hospital-badge-type">Specialized Healthcare</div>
+              <div class="hospital-card-header">
+                  <img src="images/karachihospitals/baqai.png" alt="Hospital Profile" class="card-profile-img">
+                  <div class="hospital-info">
+                      <h2>Baqai Medical University</h2>
+                      <span class="location-tag">📍 Gulberg II, Lahore</span>
+                  </div>
+              </div>
+              <p class="hospital-desc">Advanced multi-specialty medical center featuring modern diagnostic labs and consultant specialists.</p>
+              <div class="contact-number">📞 Official Phone: 042-35789654</div>
+              <div class="card-footer-row">
+                  <div class="facility-badges"><span>Diagnostics</span><span>Consultation</span><span>Lab</span></div>
+                  <div class="hospital-actions">
+                      <button class="btn-whatsapp" onclick="window.open('https://wa.me/924235789654', '_blank')">WhatsApp</button>
+                      <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                   </div>
+               </div>
+            </div>
+
+<!-- 15 -->
+       <div class="hospital-box" id="hospital-itihaad">
+           <div class="hospital-badge-type">General Hospital</div>
+           <div class="hospital-card-header">
+                <img src="images/karachihospitals/holyfamily.png" alt="Hospital Profile" class="card-profile-img">
+               <div class="hospital-info">
+                      <h2>Holy Family Hospital</h2>
+                      <span class="location-tag">📍 Township, Lahore</span>
+                </div>
+           </div>
+                  <p class="hospital-desc">Community-focused medical institution providing affordable inpatient treatment and general surgeries.</p>
+                  <div class="contact-number">📞 Official Phone: 042-35123789</div>
+                 <div class="card-footer-row">
+                 <div class="facility-badges"><span>General Ward</span><span>Surgery</span><span>Emergency</span></div>
+            <div class="hospital-actions">
+               <button class="btn-whatsapp" onclick="window.open('https://wa.me/924235123789', '_blank')">WhatsApp</button>
+               <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+           </div>
+       </div>
+</div>
+
+        </div>
+
+        <!-- Right Side: Fully Interactive Google Map -->
+        <div class="map-container-box">
+            <h3>Interactive City Map</h3>
+            <p class="map-subtitle">Click and explore hospital markers across Karachi</p>
+            <div class="map-frame-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d115838.354673641!2d67.0011361!3d24.8607343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1shospitals%20in%20Karachi!5e0!3m2!1sen!2s!4v1718000000000!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- about karachi hospitals -->
+
+    <section class="content-details-section">
+        
+        <h2>Comprehensive Overview of Karachi Healthcare System</h2>
+        <p>The healthcare infrastructure in Karachi represents a vast and dynamic network combining world-class tertiary care medical institutions, extensive charitable trust hospitals, government teaching facilities, and advanced private medical complexes. As Pakistan's largest metropolitan hub, the city's medical network caters to millions of residents and patients from across the country, ensuring comprehensive coverage ranging from primary outpatient treatments to highly specialized surgical interventions, emergency trauma response, and long-term medical rehabilitation.</p>
+
+        <h2>Charitable Trust and Nonprofit Healthcare Networks</h2>
+        <p>Charitable and philanthropic organizations form the backbone of accessible healthcare in Karachi, providing high-quality, subsidized, or entirely free medical services to underprivileged communities:</p>
+        <p><strong>• Indus Hospital & Health Network:</strong> A massive multidisciplinary healthcare institution providing completely free, premium-quality medical services, emergency care, and specialized treatments to all patients.</p>
+        <p><strong>• Aga Khan University Hospital:</strong> A world-class tertiary care medical center offering comprehensive specialized treatments, advanced oncology care, and cutting-edge medical diagnostics.</p>
+        <p><strong>• Patel Hospital:</strong> A non-profit modern hospital delivering affordable medical treatments, intensive care units, and dependable diagnostic services to the community.</p>
+
+        <h2>Government Teaching Hospitals and Emergency Public Networks</h2>
+        <p>Public sector teaching hospitals handle an enormous volume of emergency cases, serving as vital lifelines equipped with specialized trauma care and public health support:</p>
+        <p><strong>• Jinnah Postgraduate Medical Centre (JPMC):</strong> A massive public medical complex featuring specialized trauma units, the renowned cyberknife facility, and 24/7 emergency care departments.</p>
+        <p><strong>• Civil Hospital Karachi (Dr. Ruth K.M. Pfau CHK):</strong> One of the country's largest public teaching hospitals providing comprehensive emergency, surgical, and general ward medical support.</p>
+        <p><strong>• Dow University Hospital:</strong> An extensive university hospital equipped with modern surgical suites, intensive care units, and active medical research centers.</p>
+
+        <h2>Private Healthcare Excellence and Advanced Specialty Centers</h2>
+        <p>Complementing the public and trust sectors, top-tier private medical institutions in Karachi maintain rigorous international clinical standards across various specialties:</p>
+        <p><strong>• Liaquat National Hospital & South City Hospital:</strong> Renowned private medical institutions offering specialized clinical care, advanced radiology, maternity suites, and intensive care units.</p>
+        <p><strong>• National Institute of Cardiovascular Diseases (NICVD):</strong> A premier standalone heart hospital providing advanced cardiac care, emergency angioplasty, and complex bypass surgeries.</p>
+        <p><strong>• Ziauddin Hospital & OMI Hospital:</strong> Leading multi-specialty providers delivering expert medical treatments, orthopedic care, spine surgery, and outpatient clinical services.</p>
+
+        <h2>Community Integration, Diagnostics, and Preventive Health Initiatives</h2>
+        <p>Karachi's healthcare ecosystem extends deep into neighborhoods through specialized diagnostic centers, community clinics, and preventive health campaigns:</p>
+        <p><strong>• Diagnostic Laboratories:</strong> Extensive networks providing precise laboratory testing, advanced imaging, and routine health screening packages across multiple city districts.</p>
+        <p><strong>• Specialized Clinics:</strong> Neighborhood medical centers offering accessible outpatient consultations, general pharmacy support, and minor emergency care.</p>
+        <p><strong>• Public Health Outreach:</strong> Collaborative health initiatives driving mass vaccination programs, maternal health awareness, and chronic disease management across urban communities.</p>
+
+    </section>
+
+    <!-- whatspp -->
+
+<a href="https://wa.me/" target="_blank" class="whatsapp-sticky-btn" title="Chat on WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+<!-- footer section -->
+ <footer class="main-footer">
+    <div class="footer-grid">
+        <div class="footer-col firstdiv">
+            <h3>HealthVibe</h3>
+            <p>Pakistan's platform for finding, comparing, and booking doctors.</p>
+            <div class="social-links" >
+            <a href="#" style="color: white; margin-right: 15px; font-size: 20px;"><i class="fab fa-facebook"></i></a>
+            <a href="#" style="color: white; margin-right: 15px; font-size: 20px;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-col">
+            <h4>FIND DOCTORS</h4>
+            <ul>
+                <li><a href="cardiologist.html">Cardiologist</a></li>
+                <li><a href="dentist.html">Dentist</a></li>
+                <li><a href="dermatologist.html">Dermatologist</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>HOSPITALS</h4>
+            <ul>
+                <li><a href="hospitals-lahore.html">Lahore</a></li>
+                <li><a href="hospitals-karachi.html">Karachi</a></li>
+                <li><a href="hospitals-islamabad.html">Islamabad</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>PHARMACY</h4>
+            <ul>
+                <li><a href="medicines.html"> Medicines</a></li>
+                <li><a href="baby-care.html">Baby Care</a></li>
+                <li><a href="join-as-doctor.html">Join as Doctor</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 HealthVibe. All rights reserved. | Made for patients across Pakistan.</p>
+    </div>
+</footer>
+
+<!-- ai chat bot -->
+<div class="floating-ai-btn-container">
+    <button onclick="toggleAiChatWindow()" class="animated-glow-btn-float" title="Ask HealthVibe AI Assistant">
+        <i class="fas fa-robot"></i>
+    </button>
+    
+    <div id="aiFloatingWindow" class="ai-chat-window-float" style="display: none;">
+        <div class="ai-window-header">
+            <h3><i class="fas fa-stethoscope"></i> HealthVibe Smart Assistant</h3>
+            <button onclick="toggleAiChatWindow()" class="close-window-btn">&times;</button>
+        </div>
+        <div id="aiChatOutput" class="ai-output-box-float">Hello! Welcome to HealthVibe. How can I assist you with hospitals or medical guidance today?</div>
+        <div class="ai-input-row-float">
+            <input type="text" id="aiUserInput" placeholder="Type your medical question here..." onkeypress="if(event.key=='Enter') askGroqAI()">
+            <button onclick="askGroqAI()" class="send-btn-float"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

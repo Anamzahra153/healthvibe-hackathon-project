@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthVibe</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header Section -->
+<header class="site-header">
+  <div class="headerinnerdiv">
+    <!-- first div -->
+    <a href="index.html" class="logo-link">
+        <div id="my-logo">
+            <span class="health">Health</span><span class="vibe">Vibe</span>
+        </div>
+    </a>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <!-- second div -->
+    <div>
+        <nav class="nav-menu" id="navMenu">
+            
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Find Doctors ▾</span>
+                <div class="dropdown-panel">
+                    <a href="dermatologist.html">Dermatologist</a>
+                    <a href="cardiologist.html">Cardiologist</a>
+                    <a href="dentist.html">Dentist</a>
+                </div>
+            </div>
+
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Hospitals ▾</span>
+                <div class="dropdown-panel">
+                    <a href="hospitals-lahore.html">Lahore</a>
+                    <a href="hospitals-karachi.html">Karachi</a>
+                    <a href="hospitals-islamabad.html">Islamabad</a>
+                </div>
+            </div>
+            
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Pharmacy ▾</span>
+                <div class="dropdown-panel">
+                    <a href="medicines.html">Medicines</a>
+                    <a href="baby-care.html">Baby Care</a>
+                </div>
+            </div>
+
+            <!-- Mobile only buttons (Sirf mobile par menu ke andar dikhenge) -->
+            <div class="mobile-only-actions">
+                <a href="book-appointment.html" class="btn-primary">Book Appointment</a>
+                <a href="join-as-doctor.html" class="btn-secondary">Join as Doctor</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- third div -->
+    <div class="header-actions">
+        <a href="book-appointment.html" class="btn-primary">Book Appointment</a>
+        <a href="join-as-doctor.html" class="btn-secondary">Join as Doctor</a>
+    </div>
+ </div>
+</header>
+
+
+<!-- health vibe layout container -->
+
+<div class="healthvibe-layout-container ">
+    <div class="doctor-results-header">
+        <h1>1,166 Best Dermatologists In <a href="index.html" style="color: inherit; text-decoration: none;">HealthVibe</a> | Top Skin Specialists</h1>
+        <p><a href="index.html">HealthVibe</a> > Dermatologist</p>
+    </div>
+
+ <div class="search-filter-wrapper">
+    <div class="search-box">
+        <input type="text" id="doctorInput" class="doctor-field" list="doctor-categories" placeholder="Search by Doctors ">
+        <datalist id="doctor-categories">
+            <option value="Dermatologist">
+            <option value="Dentist">
+            <option value="Cardiologist">
+        </datalist>
+        <button class="search-submit" onclick="searchDoctor()">Search</button>
+    </div>
+
+    <div class="filter-buttons-wrapper">
+        <button class="filter-btn" onclick="handleDoctorFilter('fee-low', this)">Fee: Low to High</button>
+        <button class="filter-btn" onclick="handleDoctorFilter('rating', this)">Highest Rated</button>
+        <button class="filter-btn active" onclick="handleDoctorFilter('all', this)">All Specialists</button>
+        <button class="filter-btn" onclick="handleDoctorFilter('experienced', this)">15+ / Exp</button>
+    </div>
+ </div>
+</div>
+
+
+<!-- Doctor Cards Section -->
+<section class="doctors-section">
+    <div class="doctors-grid-container container">
+        
+        <!-- card 1: Dr. Hamza Ali -->
+        <div class="doctor-card" data-experience="15" data-fee="1500" data-rating="4.9">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctorspage/M9.jpg" alt="Dr. Hamza Ali">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Hamza Ali</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Dentist, Implantologist</p>
+                    <p class="qualification">BDS, FCPS (Operative Dentistry), ICOI Fellow (USA)</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 1500</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>510</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>15 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>98%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Dental Implants</span>
+                <span class="tag">Root Canal</span>
+                <span class="tag">Crowns & Bridges</span>
+                <span class="tag">Teeth Whitening</span>
+            </div>
+        </div>
+
+        <!-- card 2: Dr. Sana Noor -->
+        <div class="doctor-card" data-experience="12" data-fee="1200" data-rating="4.8">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctorspage/F1.jpg" alt="Dr. Sana Noor">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Sana Noor</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Orthodontist, Dentist</p>
+                    <p class="qualification">BDS, FCPS (Orthodontics)</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 1200</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>480</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>12 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>96%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Braces</span>
+                <span class="tag">Aligners</span>
+                <span class="tag">Smile Makeover</span>
+                <span class="tag">Crossbite</span>
+            </div>
+        </div>
+
+        <!-- card 3: Dr. Daniyal Khan -->
+        <div class="doctor-card" data-experience="11" data-fee="1000" data-rating="4.7">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctorspage/M8.jpg" alt="Dr. Daniyal Khan">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Daniyal Khan</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Oral & Maxillofacial Surgeon</p>
+                    <p class="qualification">BDS, FCPS (Oral & Maxillofacial Surgery)</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 1000</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>455</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>11 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>95%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Wisdom Tooth Surgery</span>
+                <span class="tag">Jaw Fracture</span>
+                <span class="tag">Dental Extractions</span>
+                <span class="tag">Cysts</span>
+            </div>
+        </div>
+
+        <!-- card 4: Dr. Rabia Malik -->
+        <div class="doctor-card" data-experience="9" data-fee="900" data-rating="4.6">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctorspage/F2.jpg" alt="Dr. Rabia Malik">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Rabia Malik</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant General Dentist</p>
+                    <p class="qualification">BDS, C-Endo</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 900</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>425</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>9 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>94%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Scaling & Polishing</span>
+                <span class="tag">Fillings</span>
+                <span class="tag">Toothache</span>
+                <span class="tag">Gums Treatment</span>
+            </div>
+        </div>
+
+        <!-- card 5: Dr. Zeeshan Haider -->
+        <div class="doctor-card" data-experience="14" data-fee="1400" data-rating="4.8">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctorspage/M7.jpg" alt="Dr. Zeeshan Haider">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Zeeshan Haider</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Prosthodontist, Dentist</p>
+                    <p class="qualification">BDS, FCPS (Prosthodontics)</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 1400</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>460</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>14 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>97%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Dentures</span>
+                <span class="tag">Veneers</span>
+                <span class="tag">Full Mouth Rehab</span>
+                <span class="tag">Dental Bridges</span>
+            </div>
+        </div>
+
+        <!-- card 6: Dr. Mehwish Batool -->
+        <div class="doctor-card" data-experience="10" data-fee="1100" data-rating="4.7">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctorspage/F10.jpg" alt="Dr. Mehwish Batool">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Mehwish Batool</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Pediatric Dentist</p>
+                    <p class="qualification">BDS, MSc (Paediatric Dentistry)</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 1100</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>435</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>10 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>96%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Kids Dental Care</span>
+                <span class="tag">Fluoride Treatment</span>
+                <span class="tag">Dental Sealants</span>
+                <span class="tag">Space Maintainer</span>
+            </div>
+        </div>
+
+        <!-- card 7: Dr. Fahad Mustafa -->
+        <div class="doctor-card" data-experience="8" data-fee="800" data-rating="4.5">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctorspage/M6.jpg" alt="Dr. Fahad Mustafa">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Fahad Mustafa</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">General Dentist</p>
+                    <p class="qualification">BDS, C-Ortho</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 800</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>415</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>8 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>92%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Tooth Extraction</span>
+                <span class="tag">Teeth Cleaning</span>
+                <span class="tag">Composite Filling</span>
+                <span class="tag">Consultation</span>
+            </div>
+        </div>
+
+        <!-- card 8: Dr. Usman Ghani -->
+        <div class="doctor-card more-card" data-experience="7" data-fee="1300" data-rating="4.6">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctorspage/M5.jpg" alt="Dr. Usman Ghani">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Usman Ghani</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Endodontist, Dentist</p>
+                    <p class="qualification">BDS, FCPS (Operative Dentistry)</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 1300</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>400</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>7 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>93%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Root Canal Treatment</span>
+                <span class="tag">Retreatment</span>
+                <span class="tag">Post and Core</span>
+                <span class="tag">Sensitive Teeth</span>
+            </div>
+        </div>
+
+        <!-- card 9: Dr. Hania -->
+        <div class="doctor-card more-card" data-experience="13" data-fee="1250" data-rating="4.7">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctorspage/F12.jpg" alt="Dr. Hania">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Hania</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Periodontist, Dental Surgeon</p>
+                    <p class="qualification">BDS, FCPS (Periodontology)</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 1250</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>440</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>13 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>95%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Gum Surgery</span>
+                <span class="tag">Bleeding Gums</span>
+                <span class="tag">Scaling</span>
+                <span class="tag">Bone Grafting</span>
+            </div>
+        </div>
+
+        <!-- card 10: Dr. Kiran Shah -->
+        <div class="doctor-card more-card" data-experience="6" data-fee="750" data-rating="4.4">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctor3.png" alt="Dr. Kiran Shah">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Kiran Shah</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">General Dentist</p>
+                    <p class="qualification">BDS</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 750</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>385</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>6 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>91%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Teeth Polishing</span>
+                <span class="tag">Oral Hygiene</span>
+                <span class="tag">Simple Extraction</span>
+                <span class="tag">Consultation</span>
+            </div>
+        </div>
+
+        <!-- card 11: Dr. Asim Jamil -->
+        <div class="doctor-card more-card" data-experience="14" data-fee="1600" data-rating="4.9">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctor4.jpg" alt="Dr. Asim Jamil">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Asim Jamil</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Dental Surgeon, Implantologist</p>
+                    <p class="qualification">BDS, FCPS, Fellowship in Dental Implants</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 1600</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>450</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>14 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>97%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Full Mouth Implants</span>
+                <span class="tag">Complex Extraction</span>
+                <span class="tag">Sinus Lift</span>
+                <span class="tag">Advanced Surgery</span>
+            </div>
+        </div>
+
+        <!-- card 12: Dr. Amna Tariq -->
+        <div class="doctor-card more-card" data-experience="9" data-fee="1150" data-rating="4.7">
+            <div class="doctor-top-row">
+                <div class="profile-img">
+                    <img src="images/doctorspage/F4.jpg" alt="Dr. Amna Tariq">
+                </div>
+                <div class="doctor-details">
+                    <h2 class="doctor-name">Dr. Amna Tariq</h2>
+                    <div class="badges">
+                        <span class="badge-booked">Top Booked Doctor</span>
+                        <span class="badge-verified">PMDC Verified</span>
+                    </div>
+                    <p class="specialty">Consultant Orthodontist</p>
+                    <p class="qualification">BDS, MCPS (Orthodontics)</p>
+                    <p class="doctor-fee" style="color: #0d5c3f; font-weight: bold; margin-top: 5px;">Fee: PKR 1150</p>
+                    
+                    <div class="doctor-stats">
+                        <div class="stat-item"><span>Reviews</span><br><strong>480</strong></div>
+                        <div class="stat-item"><span>Experience</span><br><strong>9 Yrs</strong></div>
+                        <div class="stat-item"><span>Satisfaction</span><br><strong>95%</strong></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-video" onclick="window.open('https://wa.me/', '_blank')">Book Video Call</button>
+                    <button class="btn-appoint" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                </div>
+            </div>
+            <div class="doctor-tags">
+                <span class="tag">Clear Aligners</span>
+                <span class="tag">Metal Braces</span>
+                <span class="tag">Retainers</span>
+                <span class="tag">Crowded Teeth</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div class="load-more-wrapper">
+    <button id="load-more-btn" onclick="showMore()">Load More</button>
+</div>
+<!-- about dentist -->
+
+<section class="derm-info-main-wrap container">
+    <div class="derm-content-box">
+        <h2 class="derm-main-heading">About Dentist</h2>
+        <p class="derm-desc-text">HealthVibe offers a list of expert dentists and dental specialists. To help you find the best nearby dental specialist for you, we have compiled a list of top dentists based on their clinical experience, clinic/hospital location, availability hours, fee range, and services, as well as positive reviews from patients.</p>
+
+        <h3 class="derm-sub-heading">Who is a Dentist?</h3>
+        <p class="derm-desc-text">A dentist is a highly trained healthcare professional who is fully qualified to practice dentistry and specialize comprehensively in the exhaustive diagnosis, prevention, management, and surgical treatment of various complex conditions, diseases, and disorders affecting the oral cavity, teeth, gums, pulp tissues, and surrounding maxillofacial 
+            jaw structures. Beyond simply performing routine dental examinations, cleanings,
+             and preventative check-ups, they play an essential role in preserving systemic wellness by identifying early signs of oral diseases, executing intricate restorative procedures, correcting bite irregularities, and guiding patients of all ages toward lifelong oral hygiene habits to secure both confident smiles and long-term overall health. Beyond routinely performing standard dental examinations, deep cleanings, and preventative check-ups, they play an irreplaceable role in maintaining total systemic health by identifying early warning signs of systemic diseases manifesting in the mouth, executing intricate restorative treatments like fillings and root canals, correcting alignment and bite irregularities, and educating patients of all ages on rigorous oral hygiene routines to ensure both radiant smiles and sustained overall wellbeing.</p>
+
+        <h3 class="derm-sub-heading">What are the types of Dentists?</h3>
+        <p class="derm-desc-text">Within dental practice, multiple specializations are dedicated to addressing specific oral health and structural challenges:</p>
+        <ul class="derm-bullet-list">
+            <li><strong>General Dentists:</strong> Focus on routine dental care, fillings, cleanings, preventive checkups, and overall oral hygiene management.</li>
+            <li><strong>Orthodontists:</strong> Specialize in correcting misaligned teeth and jaws using braces, aligners, and various orthodontic appliances.</li>
+            <li><strong>Endodontists:</strong> Focus on treatments related to the dental pulp and roots, performing complex root canal therapies.</li>
+            <li><strong>Periodontists:</strong> Specialize in the prevention, diagnosis, and treatment of periodontal disease and the placement of dental implants.</li>
+        </ul>
+
+        <h3 class="derm-sub-heading">What conditions are treated by a Dentist?</h3>
+        <p class="derm-desc-text">Dentists are expert medical professionals dedicated to diagnosing, treating, and managing a comprehensive variety of oral and dental conditions. Their specialized and advanced clinical care covers persistent dental challenges such as severe structural tooth decay, deep cavities, chronic inflammatory gum diseases like gingivitis and periodontitis, painful impacted wisdom teeth, complex malocclusions and misaligned bites, acute dental trauma, missing teeth requiring bridges, dentures or dental implants, and ongoing preventative oral hygiene maintenance to ensure absolute long-term dental health and a confident smile.</p>
+    </div>
+</section>
+
+<!-- why choose health vibe for detist -->
+
+<section class="hv-why-sec">
+    <div class="hv-why-wrap">
+        <div class="hv-why-top">
+            <span class="hv-why-tag">— DENTAL HEALTH CARE</span>
+            <h2 class="hv-why-title">Complete Dental & Oral Wellness</h2>
+            <p class="hv-why-desc">From routine cleanings to advanced restorative procedures, we connect you with expert dentists to keep your smile bright, healthy, and pain-free.</p>
+        </div>
+
+        <div class="hv-why-grid">
+            <!-- Feature 1 -->
+            <div class="hv-why-card">
+                <div class="hv-why-icon-box">🦷</div>
+                <h3 class="hv-why-card-title">Expert Dentists</h3>
+                <p class="hv-why-card-text">Consult with licensed dental surgeons and orthodontists specializing in painless treatments and precise oral care.</p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="hv-why-card">
+                <div class="hv-why-icon-box">✨</div>
+                <h3 class="hv-why-card-title">Advanced Procedures</h3>
+                <p class="hv-why-card-text">Get professional care for teeth whitening, root canals, braces alignment, and comprehensive gum health treatments.</p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="hv-why-card">
+                <div class="hv-why-icon-box">📅</div>
+                <h3 class="hv-why-card-title">Easy Clinic Visits</h3>
+                <p class="hv-why-card-text">Quickly book check-ups and follow-ups with nearby dental clinics without waiting in long queues.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ question -->
+
+<section class="faq-section">
+    <h2>Frequently Asked Questions about Best Dentists in Pakistan</h2>
+    
+    <div class="faq-item">
+        <button class="faq-question">
+            <span>Which symptoms and issues are treated by Dentists in Pakistan?</span>
+            <span class="faq-icon">⌄</span>
+        </button>
+        <div class="faq-answer">
+            <p>Dentists specialize in diagnosing, managing, and treating a comprehensive variety of oral health and dental conditions. This includes severe tooth decay, dental cavities, gum diseases or gingivitis, tooth sensitivity, root canal infections, impacted wisdom teeth, misaligned jaws, and missing teeth requiring bridges, crowns, or dental implants. They also provide comprehensive oral hygiene counseling, professional teeth cleaning, and cosmetic procedures like teeth whitening.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            <span>Who is the best Dentist in Pakistan?</span>
+            <span class="faq-icon">⌄</span>
+        </button>
+        <div class="faq-answer">
+            <p>Identifying the absolute best dentist largely depends on your specific dental requirements, whether you need routine restorative work, orthodontics, or complex oral surgery, your geographical location, and your preference for private dental clinics versus hospital setups. HealthVibe allows you to thoroughly examine verified patient reviews, success rates, professional qualifications, and detailed background profiles to help you choose the most suitable dental specialist for your condition.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            <span>Which dentists are available for online consultation?</span>
+            <span class="faq-icon">⌄</span>
+        </button>
+        <div class="faq-answer">
+            <p>A large network of highly qualified and experienced dental specialists provides convenient telemedicine and instant video consultation services through HealthVibe. These online sessions are ideal for discussing preliminary dental pain symptoms, reviewing digital X-ray reports, managing post-operative recovery guidelines, discussing cosmetic smile makeovers, and handling initial prescription adjustments without needing to travel to a physical clinic.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            <span>How do you choose a Dentist in Pakistan?</span>
+            <span class="faq-icon">⌄</span>
+        </button>
+        <div class="faq-answer">
+            <p>Choosing the right dentist requires evaluating multiple critical factors. You should look into their educational degrees and certifications such as BDS, FCPS, or specialization in fields like orthodontics and oral surgery, their years of hands-on clinical experience, patient feedback scores and testimonials, the accessibility and modern equipment of their dental clinic, and whether their primary expertise aligns with your specific oral health needs.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            <span>How much does a Dentist cost in Pakistan?</span>
+            <span class="faq-icon">⌄</span>
+        </button>
+        <div class="faq-answer">
+            <p>The consultation charges for visiting a certified dentist typically vary between PKR 1,000 and PKR 3,000 or higher per visit, while procedure costs like fillings, scaling, or root canals vary separately. The exact fee structure generally fluctuates based on the doctor's professional market reputation, years of specialized experience, the tier and standard of the private dental clinic, and whether the appointment is booked for a consultation or a specific treatment procedure.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            <span>Who is the top dentist in Pakistan?</span>
+            <span class="faq-icon">⌄</span>
+        </button>
+        <div class="faq-answer">
+            <p>Top-tier dental care specialists and renowned oral surgeons are primarily based in major metropolitan medical hubs across the country, including Lahore, Karachi, and Islamabad. These esteemed professionals usually hold advanced international fellowship certifications, extensive clinical practice, and leadership roles in prominent tertiary care dental institutes and modern dental hospitals.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            <span>Do you have dentist under 1000 In Pakistan?</span>
+            <span class="faq-icon">⌄</span>
+        </button>
+        <div class="faq-answer">
+            <p>Finding a senior dental consultant under PKR 1,000 can sometimes be challenging, but you can easily find junior dental surgeons, general dentists, or house officers offering basic dental check-ups, scaling, and initial consultations under this budget, particularly when visiting charitable trust clinics, dental college teaching hospitals, or public sector healthcare facilities.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            <span>Who is the most experienced Dentist In Pakistan?</span>
+            <span class="faq-icon">⌄</span>
+        </button>
+        <div class="faq-answer">
+            <p>The most experienced dentists typically possess over 15 to 25 years of dedicated clinical and surgical practice. These veteran dental professionals are frequently associated with premier dental teaching institutions, specialized oral health centers, and major private dental complexes where they manage complex surgical extractions, full-mouth rehabilitations, and advanced restorative treatments.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            <span>How can I find a Dentist near me in Pakistan?</span>
+            <span class="faq-icon">⌄</span>
+        </button>
+        <div class="faq-answer">
+            <p>You can effortlessly locate nearby dental specialists by utilizing HealthVibe's interactive city and neighborhood filter tools. The platform allows you to narrow down your search based on your exact location, view complete clinic addresses, check real-time doctor availability schedules, examine consultation charges, and secure your direct appointment slots within minutes.</p>
+        </div>
+    </div>
+</section>
+
+ <!-- footer section -->
+<footer class="main-footer">
+    <div class="footer-grid ">
+        <div class="footer-col firstdiv">
+            <h3>HealthVibe</h3>
+            <p>Pakistan's platform for finding, comparing, and booking doctors.</p>
+            <div class="social-links" >
+            <a href="#" style="color: white; margin-right: 15px; font-size: 20px;"><i class="fab fa-facebook"></i></a>
+            <a href="#" style="color: white; margin-right: 15px; font-size: 20px;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-col">
+            <h4>FIND DOCTORS</h4>
+            <ul>
+                <li><a href="cardiologist.html">Cardiologist</a></li>
+                <li><a href="dentist.html">Dentist</a></li>
+                <li><a href="dermatologist.html">Dermatologist</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>HOSPITALS</h4>
+            <ul>
+                <li><a href="hospitals-lahore.html">Lahore</a></li>
+                <li><a href="hospitals-karachi.html">Karachi</a></li>
+                <li><a href="hospitals-islamabad.html">Islamabad</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>PHARMACY</h4>
+            <ul>
+                <li><a href="medicines.html"> Medicines</a></li>
+                <li><a href="baby-care.html">Baby Care</a></li>
+                <li><a href="join-as-doctor.html">Join as Doctor</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 HealthVibe. All rights reserved. | Made for patients across Pakistan.</p>
+    </div>
+</footer>
+
+    
+<!-- whatspp -->
+
+<a href="https://wa.me/" target="_blank" class="whatsapp-sticky-btn" title="Chat on WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+<!-- ai chat bot -->
+ <!-- Floating AI Chatbot Button & Window -->
+<div class="floating-ai-btn-container">
+    <button onclick="toggleAiChatWindow()" class="animated-glow-btn-float" title="Ask HealthVibe AI Assistant">
+        <i class="fas fa-robot"></i>
+    </button>
+    
+    <div id="aiFloatingWindow" class="ai-chat-window-float" style="display: none;">
+        <div class="ai-window-header">
+            <h3><i class="fas fa-stethoscope"></i> HealthVibe Smart Assistant</h3>
+            <button onclick="toggleAiChatWindow()" class="close-window-btn">&times;</button>
+        </div>
+        <div id="aiChatOutput" class="ai-output-box-float">Hello! Welcome to HealthVibe. How can I assist you with hospitals or medical guidance today?</div>
+        <div class="ai-input-row-float">
+            <input type="text" id="aiUserInput" placeholder="Type your medical question here..." onkeypress="if(event.key=='Enter') askGroqAI()">
+            <button onclick="askGroqAI()" class="send-btn-float"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>

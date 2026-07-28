@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthVibe</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header Section -->
+<header class="site-header">
+  <div class="headerinnerdiv">
+    <!-- first div -->
+    <a href="index.html" class="logo-link">
+        <div id="my-logo">
+            <span class="health">Health</span><span class="vibe">Vibe</span>
+        </div>
+    </a>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <!-- second div -->
+    <div>
+        <nav class="nav-menu" id="navMenu">
+            
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Find Doctors ▾</span>
+                <div class="dropdown-panel">
+                    <a href="dermatologist.html">Dermatologist</a>
+                    <a href="cardiologist.html">Cardiologist</a>
+                    <a href="dentist.html">Dentist</a>
+                </div>
+            </div>
+
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Hospitals ▾</span>
+                <div class="dropdown-panel">
+                    <a href="hospitals-lahore.html">Lahore</a>
+                    <a href="hospitals-karachi.html">Karachi</a>
+                    <a href="hospitals-islamabad.html">Islamabad</a>
+                </div>
+            </div>
+            
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">Pharmacy ▾</span>
+                <div class="dropdown-panel">
+                    <a href="medicines.html">Medicines</a>
+                    <a href="baby-care.html">Baby Care</a>
+                </div>
+            </div>
+
+            <!-- Mobile only buttons (Sirf mobile par menu ke andar dikhenge) -->
+            <div class="mobile-only-actions">
+                <a href="book-appointment.html" class="btn-primary">Book Appointment</a>
+                <a href="join-as-doctor.html" class="btn-secondary">Join as Doctor</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- third div -->
+    <div class="header-actions">
+        <a href="book-appointment.html" class="btn-primary">Book Appointment</a>
+        <a href="join-as-doctor.html" class="btn-secondary">Join as Doctor</a>
+    </div>
+ </div>
+</header>
+
+<!-- hospitals list -->
+
+<!-- Page Header Banner -->
+    <header class="hospital-page-banner">
+    <div class="banner-content">
+        <h1>Islamabad Healthcare Directory</h1>
+        <P>"Access verified addresses, contact numbers, and emergency care for top city hospitals."</P>      
+        <!-- Search Box Banner ke andar -->
+        <div class="search-box-container">
+            <input type="text" id="hospitalSearch" placeholder="Search hospitals, locations and services..." onkeyup="searchAndScrollHospital()">
+            <button class="search-btn" onclick="searchAndScrollHospital()">Search</button>
+        </div>
+    </div>
+</header>
+
+    <!-- Main Content Layout -->
+    <div class="hospital-main-wrapper">
+        
+        <!-- Left Side: Comprehensive Hospitals List with Real Contact Numbers -->
+        <div class="hospitals-container">
+            
+            <!-- 1 -->
+            <div class="hospital-box" id="hospital PakistanIMS">
+                <div class="hospital-badge-type">Government Federal</div>
+                <div class="hospital-card-header">
+                    <img src="images/islamabadhospital/pims.png" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Pakistan Institute of Medical Sciences (PIMS)</h2>
+                        <span class="location-tag">📍 Sector G-8/3, Islamabad</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Premier federal medical complex featuring extensive emergency departments, specialized children hospital, and multi-specialty care.</p>
+                <div class="contact-number">📞 Official Phone: 051-9261170</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>24/7 ER</span><span>Children Hospital</span><span>Burn Care</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/92519261170', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="hospital-box" id="hospital-Shifa">
+                <div class="hospital-badge-type">Government Autonomous</div>
+                <div class="hospital-card-header">
+                    <img src="images/islamabadhospital/shifa.png" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Shifa International Hospital</h2>
+                        <span class="location-tag">📍 Sector H-8/4, Islamabad</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Leading private tertiary care teaching hospital delivering advanced clinical services, diagnostics, and international standards of treatment.</p>
+                <div class="contact-number">📞 Official Phone: 051-8464646</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>ICU</span><span>Oncology</span><span>Cardiology</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/92518464646', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="hospital-box" id="hospital-Federal">
+                <div class="hospital-badge-type">Government Medical Center</div>
+                <div class="hospital-card-header">
+                    <img src="images/islamabadhospital/fedrel.png" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Federal Government Polyclinic Hospital</h2>
+                        <span class="location-tag">📍 Sector G-6/2, Islamabad</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Major public health center providing wide-ranging outpatient care, emergency support, and specialized clinics for citizens.</p>
+                <div class="contact-number">📞 Official Phone: 051-9218300</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Emergency</span><span>OPD</span><span>Pharmacy</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/92519218300', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="hospital-box" id="hospital-Kalsum">
+                <div class="hospital-badge-type">Private Hospital</div>
+                <div class="hospital-card-header">
+                    <img src="images/islamabadhospital/KRL.png" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Kulsum International Hospital</h2>
+                        <span class="location-tag">📍 Blue Area, Islamabad</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">State-of-the-art modern medical facility offering specialized cardiac care, advanced surgery, and executive health checkups.</p>
+                <div class="contact-number">📞 Official Phone: 051-8446666</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Cardiology</span><span>Surgery</span><span>Diagnostics</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/92518446666', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5 -->
+            <div class="hospital-box" id="hospital-Maroof">
+                <div class="hospital-badge-type">Trust Healthcare</div>
+                <div class="hospital-card-header">
+                    <img src="images/islamabadhospital/maroof.png" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>MAROOF International Hospital</h2>
+                        <span class="location-tag">📍 Sector F-10/4, Islamabad</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Comprehensive private hospital delivering high-end medical care, modern operational suites, and dedicated intensive care units.</p>
+                <div class="contact-number">📞 Official Phone: 051-2222830</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>ICU</span><span>Gynecology</span><span>Pediatrics</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/92512222830', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6 -->
+            <div class="hospital-box" id="hospital-Alimedicalcenter">
+                <div class="hospital-badge-type">Specialized Institute</div>
+                <div class="hospital-card-header">
+                    <img src="images/islamabadhospital/alimedical.png" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Ali Medical Centre</h2>
+                        <span class="location-tag">📍 Sector F-8/4, Islamabad</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Established medical center offering round-the-clock emergency assistance, specialist consultations, and diagnostic labs.</p>
+                <div class="contact-number">📞 Official Phone: 051-8096000</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>24/7 ER</span><span>Lab</span><span>Inpatient</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/92518096000', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7 -->
+            <div class="hospital-box" id="Quaid-e-Azam">
+                <div class="hospital-badge-type">Private Hospital</div>
+                <div class="hospital-card-header">
+                    <img src="images/islamabadhospital/quaid.png" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Quaid-e-Azam International Hospital</h2>
+                        <span class="location-tag">📍 Golra Road, Peshawar Road, Islamabad</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Massive healthcare campus providing broad multi-specialty medical treatments, emergency units, and specialized care.</p>
+                <div class="contact-number">📞 Official Phone: 051-8449100</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Emergency</span><span>Trauma</span><span>Surgery</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/92518449100', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8 -->
+            <div class="hospital-box" id="hospital-shaukat">
+                <div class="hospital-badge-type">Charity & Specialized</div>
+                <div class="hospital-card-header">
+                    <img src="images/islamabadhospital/saukat" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Shaukat Khanum Memorial Cancer Hospital (Islamabad)</h2>
+                        <span class="location-tag">📍 Sector H-11/4, Islamabad</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">State-of-the-art oncology center providing world-class cancer diagnostic and therapeutic care for patients in the region.</p>
+                <div class="contact-number">📞 Official Phone: 051-111-155-555</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>Oncology</span><span>Radiology</span><span>Chemotherapy</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/9251111155555', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9 -->
+            <div class="hospital-box" id="hospital-Fauji">
+                <div class="hospital-badge-type">Defense Medical Facility</div>
+                <div class="hospital-card-header">
+                    <img src="images/islamabadhospital/fauji" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Fauji Foundation Hospital</h2>
+                        <span class="location-tag">📍 Near Berdiana, Rawalpindi-Islamabad Border</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Large-scale well-equipped hospital offering extensive medical and surgical facilities supported by expert specialists.</p>
+                <div class="contact-number">📞 Official Phone: 051-5787716</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>General Medicine</span><span>Surgery</span><span>ICU</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/92515787716', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10 -->
+            <div class="hospital-box" id="hospital-Islamabad">
+                <div class="hospital-badge-type">Private Medical Center</div>
+                <div class="hospital-card-header">
+                    <img src="images/islamabadhospital/islambadspecialist.png" alt="Hospital Profile" class="card-profile-img">
+                    <div class="hospital-info">
+                        <h2>Islamabad Medical Complex</h2>
+                        <span class="location-tag">📍 Sector F-11 Markaz, Islamabad</span>
+                    </div>
+                </div>
+                <p class="hospital-desc">Accessible community medical hub featuring expert consultations, ultrasound services, and pharmacy care.</p>
+                <div class="contact-number">📞 Official Phone: 051-2229211</div>
+                <div class="card-footer-row">
+                    <div class="facility-badges"><span>OPD</span><span>Diagnostics</span><span>Pharmacy</span></div>
+                    <div class="hospital-actions">
+                        <button class="btn-whatsapp" onclick="window.open('https://wa.me/92512229211', '_blank')">WhatsApp</button>
+                        <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 11 -->
+
+            <div class="hospital-box" id="hospital-pims">
+                   <div class="hospital-badge-type">Government Medical Complex</div>
+                   <div class="hospital-card-header">
+                           <img src="images/islamabadhospital/pims.png" alt="Hospital Profile" class="card-profile-img">
+                           <div class="hospital-info">
+                             <h2>Pakistan Institute of Medical Sciences (PIMS)</h2>
+                             <span class="location-tag">📍 G-8/3, Islamabad</span>
+                          </div>
+                    </div>
+                            <p class="hospital-desc">The largest federal medical teaching institute providing extensive healthcare and emergency services.</p>
+                            <div class="contact-number">📞 Official Phone: 051-9261170</div>
+                    <div class="card-footer-row">
+                            <div class="facility-badges"><span>Trauma Center</span><span>Burn Care</span><span>Pediatrics</span></div>
+                          <div class="hospital-actions">
+                              <button class="btn-whatsapp" onclick="window.open('https://wa.me/92519261170', '_blank')">WhatsApp</button>
+                             <button class="btn-visit" onclick="window.location.href='book-appointment.html'">Book Appointment</button>
+                   </div>
+                </div>
+</div>
+
+        </div>
+        
+         
+
+        <!-- Right Side: Fully Interactive Google Map -->
+        <div class="map-container-box">
+            <h3>Interactive City Map</h3>
+            <p class="map-subtitle">Click and explore hospital markers across Islamabad</p>
+            <div class="map-frame-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d53237.95462512345!2d73.0478835!3d33.6844202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1shospitals%20in%20Islamabad!5e0!3m2!1sen!2s!4v1718000000000!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!-- Detailed Information Section with Bullet Points -->
+    <section class="content-details-section">
+        
+        <h2>Comprehensive Overview of Islamabad Healthcare System</h2>
+        <p>The healthcare infrastructure in Islamabad represents a sophisticated blend of advanced federal institutions, specialized autonomous medical complexes, charitable trust hospitals, and modern private clinics. Designed to cater to both the capital's residents and patients arriving from surrounding regions, the city's medical network ensures extensive coverage across all major healthcare domains, ranging from primary outpatient consultations to highly complex surgical interventions and long-term rehabilitation therapies.</p>
+
+        <h2>Federal Public Healthcare Institutions and Emergency Networks</h2>
+        <p>At the core of the public medical sector are major federal facilities such as the Pakistan Institute of Medical Sciences (PIMS) and the Federal Government Polyclinic Hospital. These establishments function as critical lifelines for the community, providing essential services including:</p>
+        <p><strong>• Round-the-Clock Emergency Care:</strong> Fully equipped emergency departments with advanced trauma support and critical care intervention teams.</p>
+        <p><strong>• Specialized Pediatric Units:</strong> Dedicated children's hospitals offering specialized infant care, neonatal units, and pediatric surgeries.</p>
+        <p><strong>• Subsidized Treatment & Burn Care:</strong> Accessible specialized care units ensuring affordable medical support and dedicated burn treatment facilities for public welfare.</p>
+
+        <h2>Specialized Oncology and Advanced Treatment Centers</h2>
+        <p>Islamabad is home to premier specialized institutions that provide world-class therapeutic and diagnostic care for complex diseases and critical conditions:</p>
+        <p><strong>• Advanced Cancer Care:</strong> The specialized Shaukat Khanum Memorial Cancer Hospital campus provides cutting-edge oncology diagnostics, chemotherapy protocols, and radiation therapy.</p>
+        <p><strong>• Cardiovascular Excellence:</strong> Specialized heart centers delivering comprehensive cardiac diagnostics, angioplasty, and advanced surgical interventions.</p>
+        <p><strong>• Multidisciplinary Research:</strong> Integrated clinical research units focusing on neurology, orthopedics, and complex surgical procedures.</p>
+
+        <h2>Private Healthcare Excellence and International Standards</h2>
+        <p>Complementing the public sector, top-tier private medical complexes maintain rigorous international standards of clinical excellence across the capital:</p>
+        <p><strong>• Shifa International Hospital:</strong> Leading tertiary care teaching hospital delivering advanced clinical services, diagnostics, and modern inpatient care.</p>
+        <p><strong>• Maroof & Kulsum International:</strong> High-end medical facilities offering modular surgical operation theaters, executive health checkup programs, and specialized clinics.</p>
+        <p><strong>• Quaid-e-Azam International Hospital:</strong> Massive multi-specialty healthcare campus providing broad emergency units and comprehensive specialist consultations.</p>
+
+        <h2>Community Integration, Diagnostics, and Preventive Health Initiatives</h2>
+        <p>Beyond major hospital campuses, Islamabad's healthcare ecosystem emphasizes preventive medicine and localized community access through advanced facilities:</p>
+        <p><strong>• Ali Medical Centre:</strong> Established center offering round-the-clock emergency assistance, specialist consultations, and diagnostic laboratories.</p>
+        <p><strong>• Diagnostic Networks:</strong> Sector-based medical complexes offering reliable laboratory testing, ultrasound imaging, and general outpatient services.</p>
+        <p><strong>• Public Health Programs:</strong> Collaborative health initiatives driving vaccination campaigns, maternal health education, and chronic disease management programs.</p>
+
+    </section>
+<!-- whatspp -->
+
+<a href="https://wa.me/" target="_blank" class="whatsapp-sticky-btn" title="Chat on WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+
+<!-- footer -->
+
+
+<!-- footer section -->
+ <footer class="main-footer">
+    <div class="footer-grid">
+        <div class="footer-col firstdiv">
+            <h3>HealthVibe</h3>
+            <p>Pakistan's platform for finding, comparing, and booking doctors.</p>
+            <div class="social-links" >
+            <a href="#" style="color: white; margin-right: 15px; font-size: 20px;"><i class="fab fa-facebook"></i></a>
+            <a href="#" style="color: white; margin-right: 15px; font-size: 20px;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-col">
+            <h4>FIND DOCTORS</h4>
+            <ul>
+                <li><a href="cardiologist.html">Cardiologist</a></li>
+                <li><a href="dentist.html">Dentist</a></li>
+                <li><a href="dermatologist.html">Dermatologist</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>HOSPITALS</h4>
+            <ul>
+                <li><a href="hospitals-lahore.html">Lahore</a></li>
+                <li><a href="hospitals-karachi.html">Karachi</a></li>
+                <li><a href="hospitals-islamabad.html">Islamabad</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h4>PHARMACY</h4>
+            <ul>
+                <li><a href="medicines.html"> Medicines</a></li>
+                <li><a href="baby-care.html">Baby Care</a></li>
+                <li><a href="join-as-doctor.html">Join as Doctor</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 HealthVibe. All rights reserved. | Made for patients across Pakistan.</p>
+    </div>
+</footer>
+<!-- ai chat bot -->
+ <!-- Floating AI Chatbot Button & Window -->
+<div class="floating-ai-btn-container">
+    <button onclick="toggleAiChatWindow()" class="animated-glow-btn-float" title="Ask HealthVibe AI Assistant">
+        <i class="fas fa-robot"></i>
+    </button>
+    
+    <div id="aiFloatingWindow" class="ai-chat-window-float" style="display: none;">
+        <div class="ai-window-header">
+            <h3><i class="fas fa-stethoscope"></i> HealthVibe Smart Assistant</h3>
+            <button onclick="toggleAiChatWindow()" class="close-window-btn">&times;</button>
+        </div>
+        <div id="aiChatOutput" class="ai-output-box-float">Hello! Welcome to HealthVibe. How can I assist you with hospitals or medical guidance today?</div>
+        <div class="ai-input-row-float">
+            <input type="text" id="aiUserInput" placeholder="Type your medical question here..." onkeypress="if(event.key=='Enter') askGroqAI()">
+            <button onclick="askGroqAI()" class="send-btn-float"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
